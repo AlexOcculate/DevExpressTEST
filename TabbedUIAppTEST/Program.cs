@@ -20,7 +20,7 @@ namespace TabbedUIAppTEST
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            new Form1().Show();
+            new TabbedUIAppForm().Show();
             Application.Run();
         }
     }
