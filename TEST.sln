@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestWindowsFormsApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestWindowsFormsAppProject", "UnitTestWindowsFormsAppProject\UnitTestWindowsFormsAppProject.csproj", "{038AF679-4C6C-41EA-9862-FEC5C894851B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prop", "Prop\Prop.csproj", "{3C0B02DB-79AB-4129-9D44-0A4828292871}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{038AF679-4C6C-41EA-9862-FEC5C894851B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{038AF679-4C6C-41EA-9862-FEC5C894851B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{038AF679-4C6C-41EA-9862-FEC5C894851B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0B02DB-79AB-4129-9D44-0A4828292871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0B02DB-79AB-4129-9D44-0A4828292871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0B02DB-79AB-4129-9D44-0A4828292871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0B02DB-79AB-4129-9D44-0A4828292871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
