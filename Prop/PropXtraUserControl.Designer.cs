@@ -46,11 +46,21 @@
          this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
          this.propertyDescriptionControl1 = new DevExpress.XtraVerticalGrid.PropertyDescriptionControl();
          this.enabledSvgImageCollection = new DevExpress.Utils.SvgImageCollection(this.components);
+         this.propertyLayoutControl = new DevExpress.XtraLayout.LayoutControl();
+         this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+         this.propertyGridLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+         this.propertyDescriptionLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+         this.alphabeticDescBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.enabledSvgImageCollection)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyLayoutControl)).BeginInit();
+         this.propertyLayoutControl.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyGridLayoutControlItem)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyDescriptionLayoutControlItem)).BeginInit();
          this.SuspendLayout();
          // 
          // comboBoxEdit1
@@ -82,16 +92,16 @@
          // 
          // propertyGridControl
          // 
-         this.propertyGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.propertyGridControl.Location = new System.Drawing.Point(0, 65);
+         this.propertyGridControl.Location = new System.Drawing.Point(2, 2);
          this.propertyGridControl.Margin = new System.Windows.Forms.Padding(2);
          this.propertyGridControl.Name = "propertyGridControl";
          this.propertyGridControl.OptionsFind.FindFilterColumns = "Caption";
          this.propertyGridControl.OptionsFind.ShowCloseButton = false;
          this.propertyGridControl.OptionsFind.Visibility = DevExpress.XtraVerticalGrid.FindPanelVisibility.Never;
          this.propertyGridControl.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
-         this.propertyGridControl.Size = new System.Drawing.Size(595, 542);
+         this.propertyGridControl.Size = new System.Drawing.Size(591, 453);
          this.propertyGridControl.TabIndex = 7;
+         this.propertyGridControl.CustomPropertyDescriptors += new DevExpress.XtraVerticalGrid.Events.CustomPropertyDescriptorsEventHandler(this.propertyGridControl_CustomPropertyDescriptors);
          this.propertyGridControl.FocusedRowChanged += new DevExpress.XtraVerticalGrid.Events.FocusedRowChangedEventHandler(this.propertyGridControl_FocusedRowChanged);
          // 
          // barManager1
@@ -108,8 +118,9 @@
             this.alphabeticBarButtonItem,
             this.expandBarButtonItem,
             this.collapseBarButtonItem,
-            this.categoryBarButtonItem});
-         this.barManager1.MaxItemId = 4;
+            this.categoryBarButtonItem,
+            this.alphabeticDescBarButtonItem});
+         this.barManager1.MaxItemId = 5;
          // 
          // bar1
          // 
@@ -122,7 +133,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.categoryBarButtonItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.alphabeticBarButtonItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.expandBarButtonItem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.collapseBarButtonItem)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.collapseBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.alphabeticDescBarButtonItem)});
          this.bar1.OptionsBar.DisableClose = true;
          this.bar1.OptionsBar.DrawBorder = false;
          this.bar1.OptionsBar.DrawDragBorder = false;
@@ -214,11 +226,10 @@
          // 
          // propertyDescriptionControl1
          // 
-         this.propertyDescriptionControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.propertyDescriptionControl1.Location = new System.Drawing.Point(0, 507);
+         this.propertyDescriptionControl1.Location = new System.Drawing.Point(2, 459);
          this.propertyDescriptionControl1.Name = "propertyDescriptionControl1";
          this.propertyDescriptionControl1.PropertyGrid = this.propertyGridControl;
-         this.propertyDescriptionControl1.Size = new System.Drawing.Size(595, 100);
+         this.propertyDescriptionControl1.Size = new System.Drawing.Size(591, 81);
          this.propertyDescriptionControl1.TabIndex = 13;
          this.propertyDescriptionControl1.TabStop = false;
          // 
@@ -226,12 +237,63 @@
          // 
          this.enabledSvgImageCollection.Add("Category", ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("enabledSvgImageCollection.Category"))));
          // 
+         // propertyLayoutControl
+         // 
+         this.propertyLayoutControl.Controls.Add(this.propertyDescriptionControl1);
+         this.propertyLayoutControl.Controls.Add(this.propertyGridControl);
+         this.propertyLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.propertyLayoutControl.Location = new System.Drawing.Point(0, 65);
+         this.propertyLayoutControl.Name = "propertyLayoutControl";
+         this.propertyLayoutControl.Root = this.layoutControlGroup1;
+         this.propertyLayoutControl.Size = new System.Drawing.Size(595, 542);
+         this.propertyLayoutControl.TabIndex = 19;
+         this.propertyLayoutControl.Text = "propertyLayoutControl";
+         // 
+         // layoutControlGroup1
+         // 
+         this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+         this.layoutControlGroup1.GroupBordersVisible = false;
+         this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.propertyGridLayoutControlItem,
+            this.propertyDescriptionLayoutControlItem});
+         this.layoutControlGroup1.Name = "layoutControlGroup1";
+         this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+         this.layoutControlGroup1.Size = new System.Drawing.Size(595, 542);
+         this.layoutControlGroup1.TextVisible = false;
+         // 
+         // propertyGridLayoutControlItem
+         // 
+         this.propertyGridLayoutControlItem.Control = this.propertyGridControl;
+         this.propertyGridLayoutControlItem.Location = new System.Drawing.Point(0, 0);
+         this.propertyGridLayoutControlItem.Name = "propertyGridLayoutControlItem";
+         this.propertyGridLayoutControlItem.Size = new System.Drawing.Size(595, 457);
+         this.propertyGridLayoutControlItem.TextSize = new System.Drawing.Size(0, 0);
+         this.propertyGridLayoutControlItem.TextVisible = false;
+         // 
+         // propertyDescriptionLayoutControlItem
+         // 
+         this.propertyDescriptionLayoutControlItem.Control = this.propertyDescriptionControl1;
+         this.propertyDescriptionLayoutControlItem.Location = new System.Drawing.Point(0, 457);
+         this.propertyDescriptionLayoutControlItem.MaxSize = new System.Drawing.Size(0, 85);
+         this.propertyDescriptionLayoutControlItem.MinSize = new System.Drawing.Size(104, 85);
+         this.propertyDescriptionLayoutControlItem.Name = "propertyDescriptionLayoutControlItem";
+         this.propertyDescriptionLayoutControlItem.Size = new System.Drawing.Size(595, 85);
+         this.propertyDescriptionLayoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+         this.propertyDescriptionLayoutControlItem.TextSize = new System.Drawing.Size(0, 0);
+         this.propertyDescriptionLayoutControlItem.TextVisible = false;
+         // 
+         // alphabeticDescBarButtonItem
+         // 
+         this.alphabeticDescBarButtonItem.Caption = "Alphabetic Desc";
+         this.alphabeticDescBarButtonItem.Id = 4;
+         this.alphabeticDescBarButtonItem.Name = "alphabeticDescBarButtonItem";
+         this.alphabeticDescBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.alphabeticDescBarButtonItem_ItemClick);
+         // 
          // PropXtraUserControl
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.Controls.Add(this.propertyDescriptionControl1);
-         this.Controls.Add(this.propertyGridControl);
+         this.Controls.Add(this.propertyLayoutControl);
          this.Controls.Add(this.standaloneBarDockControl1);
          this.Controls.Add(this.searchControl1);
          this.Controls.Add(this.comboBoxEdit1);
@@ -247,6 +309,11 @@
          ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.enabledSvgImageCollection)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyLayoutControl)).EndInit();
+         this.propertyLayoutControl.ResumeLayout(false);
+         ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyGridLayoutControlItem)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyDescriptionLayoutControlItem)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -270,5 +337,10 @@
       private DevExpress.XtraBars.BarButtonItem collapseBarButtonItem;
       private DevExpress.XtraBars.BarButtonItem categoryBarButtonItem;
       private DevExpress.Utils.SvgImageCollection enabledSvgImageCollection;
+      private DevExpress.XtraLayout.LayoutControl propertyLayoutControl;
+      private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+      private DevExpress.XtraLayout.LayoutControlItem propertyGridLayoutControlItem;
+      private DevExpress.XtraLayout.LayoutControlItem propertyDescriptionLayoutControlItem;
+      private DevExpress.XtraBars.BarButtonItem alphabeticDescBarButtonItem;
    }
 }
