@@ -5,17 +5,21 @@ using DevExpress.XtraVerticalGrid.Rows;
 using System;
 using System.ComponentModel;
 using System.Linq;
+using DevExpress.Utils.Svg;
 
 namespace Prop
 {
    public partial class PropXtraUserControl : XtraUserControl
    {
+      ComponentResourceManager resources = new ComponentResourceManager( typeof( PropXtraUserControl ) );
+      private bool allowCustomSorting = false;
+
       public PropXtraUserControl()
       {
          this.InitializeComponent( );
       }
 
-      internal void SetSelectedObject( object o )
+      public void SetSelectedObject( object o )
       {
          this.propertyGridControl.SelectedObject = o;
       }
@@ -23,15 +27,30 @@ namespace Prop
       private void categoryBarButtonItem_ItemClick( object sender, ItemClickEventArgs e )
       {
          this.propertyGridControl.OptionsView.ShowRootCategories = true;
-         this.alphabeticBarButtonItem.Enabled = true;
          this.categoryBarButtonItem.Enabled = false;
       }
 
       private void alphabeticBarButtonItem_ItemClick( object sender, ItemClickEventArgs e )
       {
          this.propertyGridControl.OptionsView.ShowRootCategories = false;
-         this.alphabeticBarButtonItem.Enabled = false;
          this.categoryBarButtonItem.Enabled = true;
+         this.allowCustomSorting = !this.allowCustomSorting;
+         if( this.allowCustomSorting )
+         {
+            this.alphabeticBarButtonItem.Caption = "Alphabetic ASC Order";
+            this.alphabeticBarButtonItem.ImageOptions.SvgImage = ((SvgImage) (this.resources.GetObject( "alphabeticBarButtonItem.ImageOptions.SvgImage" )));
+         }
+         else
+         {
+            this.alphabeticBarButtonItem.Caption = "Alphabetic Desc Order";
+            this.alphabeticBarButtonItem.ImageOptions.SvgImage = ((SvgImage) (this.resources.GetObject( "alphabeticDescBarButtonItem.ImageOptions.SvgImage" )));
+         }
+         this.propertyGridControl.OptionsBehavior.PropertySort
+            = this.allowCustomSorting
+            ? DevExpress.XtraVerticalGrid.PropertySort.NoSort
+            : DevExpress.XtraVerticalGrid.PropertySort.Alphabetical;
+         this.propertyGridControl.Refresh( );
+         this.propertyGridControl.RetrieveFields( );
       }
 
       private void expandBarButtonItem_ItemClick( object sender, ItemClickEventArgs e )
@@ -89,13 +108,17 @@ namespace Prop
                Array.Reverse( keys );
                e.Properties = e.Properties.Sort( keys );
             }
+            //
+            #region --- Filter Properties ---
             //PropertyDescriptorCollection filteredCollection = new PropertyDescriptorCollection( null );
-            //this.AddIfPropertyExist( e.Properties, filteredCollection, nameof( Dock ) );
-            //this.AddIfPropertyExist( e.Properties, filteredCollection, nameof( Size ) );
-            //this.AddIfPropertyExist( e.Properties, filteredCollection, nameof( Location ) );
+            //this.AddIfPropertyExist( e.Properties, filteredCollection, "Dock" );
+            //this.AddIfPropertyExist( e.Properties, filteredCollection, "Size" );
+            //this.AddIfPropertyExist( e.Properties, filteredCollection, "Location );
             //this.AddIfPropertyExist( e.Properties, filteredCollection, "NonexistentProperty" );
             //e.Properties = filteredCollection;
+            #endregion
          }
+         #region --- Filter Properties ---
          //Provide nested properties for the Size property
          //if( e.Context.PropertyDescriptor != null && e.Context.PropertyDescriptor.Name == nameof( Size ) )
          //{
@@ -103,6 +126,7 @@ namespace Prop
          //   this.AddIfPropertyExist( e.Properties, filteredCollection, nameof( Height ) );
          //   e.Properties = filteredCollection;
          //}
+         #endregion
       }
 
       private void AddIfPropertyExist(
@@ -119,8 +143,6 @@ namespace Prop
 
          targetCollection.Add( foundPropertyDescriptor );
       }
-
-      private bool allowCustomSorting = false;
 
       private void alphabeticDescBarButtonItem_ItemClick( object sender, ItemClickEventArgs e )
       {
