@@ -126,5 +126,10 @@ namespace DataPhilosophiae.Control
       {
          this.gridControl1.UseEmbeddedNavigator = !this.gridControl1.UseEmbeddedNavigator;
       }
+
+      private void testConnectionBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+
+      }
    }
 }

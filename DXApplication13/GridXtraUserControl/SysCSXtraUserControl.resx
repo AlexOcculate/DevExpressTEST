@@ -236,6 +236,30 @@
         I0ZGRkZGRiIgY2xhc3M9IldoaXRlIiAvPg0KICA8L2c+DQo8L3N2Zz4L
 </value>
   </data>
+  <data name="testConnectionBarButtonItem.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v17.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE3LjIsIFZlcnNpb249MTcuMi43
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAANQDAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iTGF5ZXJfMSI+DQogIDxnIGlkPSJMYXllcl8yIj4NCiAgICA8cGF0aCBk
+        PSJNMzAsMTZsLTIsMTBjLTAuMiwwLjktMC40LDEuNi0xLDJsMCwwaC0xbDAsMGwwLDBIMTUuOUwxMywy
+        NmgtMXYtOWw2LTZsMi0zYzAtMC4xLDAsMC4xLDAsMCAgIGMwLTEuMSwwLjktMiwyLTJjMS4xLDAsMiww
+        LjksMiwyYzAsMC4zLDAtMC4zLDAsMGMwLDAsMCwwLDAsMXMtMiw1LTIsNWg3bDAsMEMyOS42LDE0LjMs
+        MzAsMTUuMiwzMCwxNnoiIGZpbGw9IiNGRkIxMTUiIGNsYXNzPSJZZWxsb3ciIC8+DQogICAgPHBhdGgg
+        ZD0iTTQsMTJoOHYxNkg0VjEyeiIgZmlsbD0iIzcyNzI3MiIgY2xhc3M9IkJsYWNrIiAvPg0KICAgIDxw
+        YXRoIGQ9Ik04LDI0aDJ2Mkg4VjI0eiIgZmlsbD0iI0ZGRkZGRiIgY2xhc3M9IldoaXRlIiAvPg0KICAg
+        IDxwYXRoIGQ9Ik0zMCwxNmwtMiwxMGMtMC4yLDAuOS0wLjQsMS42LTEsMmwwLDBoLTFsMCwwbDAsMEgx
+        NS45TDEzLDI2aC0xdi05bDYtNmwyLTNjMC0wLjEsMCwwLjEsMCwwICAgYzAtMS4xLDAuOS0yLDItMmMx
+        LjEsMCwyLDAuOSwyLDJjMCwwLjMsMC0wLjMsMCwwYzAsMCwwLDAsMCwxcy0yLDUtMiw1aDdsMCwwQzI5
+        LjYsMTQuMywzMCwxNS4yLDMwLDE2eiIgZmlsbD0iI0ZGQjExNSIgY2xhc3M9IlllbGxvdyIgLz4NCiAg
+        ICA8cGF0aCBkPSJNNCwxMmg4djE2SDRWMTJ6IiBmaWxsPSIjRDExQzFDIiBjbGFzcz0iUmVkIiAvPg0K
+        ICAgIDxwYXRoIGQ9Ik04LDI0aDJ2Mkg4VjI0eiIgZmlsbD0iI0ZGRkZGRiIgY2xhc3M9IldoaXRlIiAv
+        Pg0KICA8L2c+DQo8L3N2Zz4L
+</value>
+  </data>
   <metadata name="sysConnectionStringBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>188, 17</value>
   </metadata>
