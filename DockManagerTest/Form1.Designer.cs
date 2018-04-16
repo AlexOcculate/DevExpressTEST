@@ -29,6 +29,7 @@
       private void InitializeComponent()
       {
          this.components = new System.ComponentModel.Container();
+         DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
          this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
          this.toolsBar = new DevExpress.XtraBars.Bar();
          this.dockManagerBarSubItem = new DevExpress.XtraBars.BarSubItem();
@@ -54,7 +55,6 @@
          this.snapModeOwnerFormsBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.snapModeOwnerControlBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.snapModeInheritBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
-         this.skinsBarSubItem = new DevExpress.XtraBars.SkinBarSubItem();
          this.floatPanelsBarSubItem = new DevExpress.XtraBars.BarSubItem();
          this.getFloatPanelsBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.mainMenuBar = new DevExpress.XtraBars.Bar();
@@ -63,8 +63,16 @@
          this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+         this.skinsBarSubItem = new DevExpress.XtraBars.SkinBarSubItem();
          this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+         this.barDockingMenuItem = new DevExpress.XtraBars.BarDockingMenuItem();
          this.memoEdit = new DevExpress.XtraEditors.MemoEdit();
+         this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+         this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+         this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
+         this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
+         this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
+         this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.memoEdit.Properties)).BeginInit();
          this.SuspendLayout();
@@ -107,9 +115,15 @@
             this.snapModeNoneBarButtonItem,
             this.snapModeInheritBarButtonItem,
             this.floatPanelsBarSubItem,
-            this.getFloatPanelsBarButtonItem});
+            this.getFloatPanelsBarButtonItem,
+            this.barDockingMenuItem,
+            this.barSubItem2,
+            this.skinBarSubItem1,
+            this.barMdiChildrenListItem1,
+            this.barDockingMenuItem1,
+            this.barWorkspaceMenuItem1});
          this.barManager1.MainMenu = this.mainMenuBar;
-         this.barManager1.MaxItemId = 27;
+         this.barManager1.MaxItemId = 36;
          this.barManager1.StatusBar = this.statusBar;
          // 
          // toolsBar
@@ -124,8 +138,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.closedPanelsBarButtonItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.snapModeBarSubItem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinsBarSubItem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.floatPanelsBarSubItem)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.floatPanelsBarSubItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
          this.toolsBar.Text = "Tools";
          // 
          // dockManagerBarSubItem
@@ -306,12 +320,6 @@
          this.snapModeInheritBarButtonItem.Name = "snapModeInheritBarButtonItem";
          this.snapModeInheritBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.snapModeInheritBarButtonItem_ItemClick);
          // 
-         // skinsBarSubItem
-         // 
-         this.skinsBarSubItem.Caption = "Skins && Themes";
-         this.skinsBarSubItem.Id = 2;
-         this.skinsBarSubItem.Name = "skinsBarSubItem";
-         // 
          // floatPanelsBarSubItem
          // 
          this.floatPanelsBarSubItem.Caption = "Float Panels";
@@ -355,31 +363,41 @@
          this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
          this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
          this.barDockControlTop.Manager = this.barManager1;
-         this.barDockControlTop.Size = new System.Drawing.Size(710, 48);
+         this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+         this.barDockControlTop.Size = new System.Drawing.Size(1481, 62);
          // 
          // barDockControlBottom
          // 
          this.barDockControlBottom.CausesValidation = false;
          this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
+         this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
          this.barDockControlBottom.Manager = this.barManager1;
-         this.barDockControlBottom.Size = new System.Drawing.Size(710, 18);
+         this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+         this.barDockControlBottom.Size = new System.Drawing.Size(1481, 18);
          // 
          // barDockControlLeft
          // 
          this.barDockControlLeft.CausesValidation = false;
          this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-         this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
+         this.barDockControlLeft.Location = new System.Drawing.Point(0, 62);
          this.barDockControlLeft.Manager = this.barManager1;
-         this.barDockControlLeft.Size = new System.Drawing.Size(0, 443);
+         this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+         this.barDockControlLeft.Size = new System.Drawing.Size(0, 664);
          // 
          // barDockControlRight
          // 
          this.barDockControlRight.CausesValidation = false;
          this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-         this.barDockControlRight.Location = new System.Drawing.Point(710, 48);
+         this.barDockControlRight.Location = new System.Drawing.Point(1481, 62);
          this.barDockControlRight.Manager = this.barManager1;
-         this.barDockControlRight.Size = new System.Drawing.Size(0, 443);
+         this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+         this.barDockControlRight.Size = new System.Drawing.Size(0, 664);
+         // 
+         // skinsBarSubItem
+         // 
+         this.skinsBarSubItem.Caption = "Skins && Themes";
+         this.skinsBarSubItem.Id = 2;
+         this.skinsBarSubItem.Name = "skinsBarSubItem";
          // 
          // barButtonItem1
          // 
@@ -387,28 +405,77 @@
          this.barButtonItem1.Id = 9;
          this.barButtonItem1.Name = "barButtonItem1";
          // 
+         // barDockingMenuItem
+         // 
+         this.barDockingMenuItem.Caption = "barDockingMenuItem1";
+         this.barDockingMenuItem.Id = 27;
+         this.barDockingMenuItem.Name = "barDockingMenuItem";
+         // 
          // memoEdit
          // 
          this.memoEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.memoEdit.Location = new System.Drawing.Point(0, 48);
+         this.memoEdit.Location = new System.Drawing.Point(0, 62);
+         this.memoEdit.Margin = new System.Windows.Forms.Padding(4);
          this.memoEdit.MenuManager = this.barManager1;
          this.memoEdit.Name = "memoEdit";
          this.memoEdit.Properties.AcceptsTab = true;
          this.memoEdit.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
          this.memoEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-         this.memoEdit.Size = new System.Drawing.Size(710, 443);
+         this.memoEdit.Size = new System.Drawing.Size(1481, 664);
          this.memoEdit.TabIndex = 4;
+         // 
+         // barSubItem2
+         // 
+         this.barSubItem2.Caption = "Others";
+         this.barSubItem2.Id = 31;
+         this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barMdiChildrenListItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barDockingMenuItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barWorkspaceMenuItem1)});
+         this.barSubItem2.Name = "barSubItem2";
+         // 
+         // skinBarSubItem1
+         // 
+         this.skinBarSubItem1.Caption = "Skins && Themes";
+         this.skinBarSubItem1.Id = 32;
+         this.skinBarSubItem1.Name = "skinBarSubItem1";
+         // 
+         // barMdiChildrenListItem1
+         // 
+         this.barMdiChildrenListItem1.Caption = "MDI Children";
+         this.barMdiChildrenListItem1.Id = 33;
+         this.barMdiChildrenListItem1.Name = "barMdiChildrenListItem1";
+         // 
+         // barDockingMenuItem1
+         // 
+         this.barDockingMenuItem1.Caption = "Docking";
+         this.barDockingMenuItem1.Id = 34;
+         this.barDockingMenuItem1.Name = "barDockingMenuItem1";
+         // 
+         // barWorkspaceMenuItem1
+         // 
+         this.barWorkspaceMenuItem1.Caption = "Workspace";
+         this.barWorkspaceMenuItem1.Id = 35;
+         this.barWorkspaceMenuItem1.Name = "barWorkspaceMenuItem1";
+         this.barWorkspaceMenuItem1.WorkspaceManager = this.workspaceManager1;
+         // 
+         // workspaceManager1
+         // 
+         this.workspaceManager1.TargetControl = this;
+         this.workspaceManager1.TransitionType = pushTransition1;
          // 
          // Form1
          // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(710, 509);
+         this.ClientSize = new System.Drawing.Size(1481, 744);
          this.Controls.Add(this.memoEdit);
          this.Controls.Add(this.barDockControlLeft);
          this.Controls.Add(this.barDockControlRight);
          this.Controls.Add(this.barDockControlBottom);
          this.Controls.Add(this.barDockControlTop);
+         this.Margin = new System.Windows.Forms.Padding(4);
          this.Name = "Form1";
          this.Text = "Form1";
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -456,6 +523,13 @@
       private DevExpress.XtraBars.BarSubItem floatPanelsBarSubItem;
       private DevExpress.XtraBars.BarButtonItem getFloatPanelsBarButtonItem;
       private DevExpress.XtraEditors.MemoEdit memoEdit;
+      private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem;
+      private DevExpress.XtraBars.BarSubItem barSubItem2;
+      private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
+      private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem1;
+      private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
+      private DevExpress.XtraBars.BarWorkspaceMenuItem barWorkspaceMenuItem1;
+      private DevExpress.Utils.WorkspaceManager workspaceManager1;
    }
 }
 
