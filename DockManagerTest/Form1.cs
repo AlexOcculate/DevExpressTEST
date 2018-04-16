@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars.Docking;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,10 +10,11 @@ namespace DockManagerTest
    {
       public Form1()
       {
-         InitializeComponent( );
+         this.InitializeComponent( );
       }
 
       private DockManager _dm;
+
       public DockManager dm
       {
          get
@@ -109,9 +111,13 @@ namespace DockManagerTest
                DockPanel panel = this.dm.RootPanels[ index ];
                // Hide the panel if it's floating. 
                if( panel.FloatForm == null )
+               {
                   index++;
+               }
                else
+               {
                   panel.Hide( );
+               }
             }
             this.hideFloatingPlanelsBarButtonItem.Caption = "Show Floating Panels";
          }
@@ -154,38 +160,44 @@ namespace DockManagerTest
 
       private void showAutoHiddenPanelsBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
-         showTopAutoHiddenDockPanels( );
-         showLeftAutoHiddenDockPanels( );
-         showBottomAutoHiddenDockPanels( );
-         showRightAutoHiddenDockPanels( );
-         showFloatAutoHiddenDockPanels( );
-         showFillAutoHiddenDockPanels( );
+         this.showTopAutoHiddenDockPanels( );
+         this.showLeftAutoHiddenDockPanels( );
+         this.showBottomAutoHiddenDockPanels( );
+         this.showRightAutoHiddenDockPanels( );
+         this.showFloatAutoHiddenDockPanels( );
+         this.showFillAutoHiddenDockPanels( );
       }
+
       private void showTopAutoHiddenDockPanels()
       {
          AutoHideContainer container = this.dm.AutoHideContainers[ DockingStyle.Top ];
          makeVisible( container );
       }
+
       private void showLeftAutoHiddenDockPanels()
       {
          AutoHideContainer container = this.dm.AutoHideContainers[ DockingStyle.Left ];
          makeVisible( container );
       }
+
       private void showBottomAutoHiddenDockPanels()
       {
          AutoHideContainer container = this.dm.AutoHideContainers[ DockingStyle.Bottom ];
          makeVisible( container );
       }
+
       private void showRightAutoHiddenDockPanels()
       {
          AutoHideContainer container = this.dm.AutoHideContainers[ DockingStyle.Right ];
          makeVisible( container );
       }
+
       private void showFloatAutoHiddenDockPanels()
       {
          AutoHideContainer container = this.dm.AutoHideContainers[ DockingStyle.Float ];
          makeVisible( container );
       }
+
       private void showFillAutoHiddenDockPanels()
       {
          AutoHideContainer container = this.dm.AutoHideContainers[ DockingStyle.Fill ];
@@ -203,6 +215,7 @@ namespace DockManagerTest
             }
          }
       }
+
       private static void makeHidden( AutoHideContainer container )
       {
          if( container != null )
@@ -214,6 +227,7 @@ namespace DockManagerTest
             }
          }
       }
+
       private static void makeAutoHide( AutoHideContainer container )
       {
          if( container != null )
@@ -228,7 +242,137 @@ namespace DockManagerTest
 
       private void hideAutoHiddenPanelsBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
+      }
 
+      private void barButtonItem2_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         DockPanelCollection hpColl = this.dm.HiddenPanels;
+         for( int i = 0; i < hpColl.Count; i++ )
+         {
+            DockPanel dp = hpColl[ i ];
+            string floatPanels = dp.Text;
+         }
+      }
+
+      private void snapModelNoneBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.None;
+      }
+
+      private void snapModelAllBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.All;
+      }
+
+      private void snapModeFormsBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.SnapForms;
+      }
+
+      private void snapModeScreensBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.Screens;
+      }
+
+      private void snapModeOwnerFormsBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.OwnerForm;
+      }
+
+      private void snapModeOwnerControlBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.OwnerControl;
+      }
+
+      private void snapModeInheritBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         this.dm.DockingOptions.SnapMode = DevExpress.Utils.Controls.SnapMode.Inherit;
+      }
+
+      private void getFloatPanelsBarButtonItem_ItemClick_1( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
+      {
+         List<DockPanel> panels = this.getAllPanels( this.dm ); // getFloatPanels( );
+         for( int i = 0; i < panels.Count; i++ )
+         {
+            DockPanel dp = panels[ i ];
+            if( dp.IsTab )
+            {
+               dp.ParentPanel.Visibility = DockVisibility.Visible;
+            }
+            dp.Visibility = DockVisibility.Visible;
+         }
+
+         DockPanel findPanelByName = this.findPanelByName( this.dm, "Panel 1" );
+         if( findPanelByName != null )
+         {
+            this.memoEdit.Text = $"Panel 1 FOUND!!!\r\n";
+         }
+      }
+
+      private List<DockPanel> getAllPanels( DockManager dm )
+      {
+         List<DockPanel> list = new List<DockPanel>( );
+         if( dm != null )
+         {
+            ReadOnlyPanelCollection panels = dm.Panels;
+            for( int i = 0; i < panels.Count; i++ )
+            {
+               DockPanel dockPanel = panels[ i ];
+               if( string.Compare( dockPanel.Text, nameof( DockPanel ), StringComparison.Ordinal ) != 0 )
+               {
+                  list.Add( dockPanel );
+               }
+            }
+         }
+         return list;
+      }
+
+      private DockPanel findPanelByName( DockManager dm, string name )
+      {
+         if( dm != null )
+         {
+            ReadOnlyPanelCollection panels = dm.Panels;
+            for( int i = 0; i < panels.Count; i++ )
+            {
+               DockPanel dockPanel = panels[ i ];
+               if( string.Compare( dockPanel.Text, nameof( DockPanel ), StringComparison.Ordinal ) != 0 )
+               {
+                  if( string.Compare( dockPanel.Text, name, StringComparison.Ordinal ) == 0 )
+                  {
+                     return dockPanel;
+                  }
+               }
+            }
+         }
+         return null;
+      }
+
+      private List<DockPanel> getFloatPanels()
+      {
+         List<DockPanel> list = new List<DockPanel>( this.dm.Count );
+         //ReadOnlyPanelCollection panels = this.dm.Panels;
+         //DockPanelCollection panels = this.dm.HiddenPanels;
+         //DockPanelCollection panels = this.dm.RootPanels;
+         //AutoHideContainerCollection panels = this.dm.AutoHideContainers;
+         //int count = rootPanels.Count + hiddenPanels.Count + autoHideContainers.Count;
+         //int count1 = panels.Count;
+
+         //string s = "";
+         //for( int i = 0; i < panels.Count; i++ )
+         //{
+         //   DockPanel panels = panels[ i ];
+         //   string panels = dockPanel.Text;
+         //   s += $"{text}|";
+         //}
+         //for( int index = 0; index < this.dm.RootPanels.Count; index++ )
+         //{
+         //   DockPanel panel = this.dm.RootPanels[ index ];
+         //   if( panel.FloatForm != null )
+         //   {
+         //      list.Add( panel );
+         //   }
+         //}
+         return list;
       }
    }
 }
