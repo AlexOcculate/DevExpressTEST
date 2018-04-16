@@ -28,6 +28,7 @@ namespace DockManagerTest
          }
       }
 
+
       private void createDockManagerBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
          // Create and dock a panel to the top edge. 
@@ -295,9 +296,17 @@ namespace DockManagerTest
          for( int i = 0; i < panels.Count; i++ )
          {
             DockPanel dp = panels[ i ];
-            if( dp.IsTab )
+            string text = dp.Text;
+            if( dp.ParentPanel != null )
             {
                dp.ParentPanel.Visibility = DockVisibility.Visible;
+               //if( dp.IsTab )
+               //{
+               //}
+               //else
+               //{
+               //   // IsSplit
+               //}
             }
             dp.Visibility = DockVisibility.Visible;
          }
@@ -374,5 +383,6 @@ namespace DockManagerTest
          //}
          return list;
       }
+
    }
 }
