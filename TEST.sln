@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prop", "Prop\Prop.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridXtraUserControl", "DXApplication13\GridXtraUserControl\GridXtraUserControl.csproj", "{65D503EB-435A-45AE-9ABD-F86760C3232C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockManagerTest", "DockManagerTest\DockManagerTest.csproj", "{05F49BC7-3955-4FBE-A53E-1A75AE05F740}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{65D503EB-435A-45AE-9ABD-F86760C3232C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65D503EB-435A-45AE-9ABD-F86760C3232C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65D503EB-435A-45AE-9ABD-F86760C3232C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F49BC7-3955-4FBE-A53E-1A75AE05F740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F49BC7-3955-4FBE-A53E-1A75AE05F740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F49BC7-3955-4FBE-A53E-1A75AE05F740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F49BC7-3955-4FBE-A53E-1A75AE05F740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
