@@ -335,7 +335,7 @@ namespace DockManagerTest
          }
          return list;
       }
-
+ 
       private DockPanel findPanelByName( DockManager dm, string name )
       {
          if( dm != null )
