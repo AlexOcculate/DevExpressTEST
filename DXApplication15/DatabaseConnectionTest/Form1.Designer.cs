@@ -32,13 +32,14 @@
          this.components = new System.ComponentModel.Container();
          this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
          this.bar1 = new DevExpress.XtraBars.Bar();
+         this.testSqliteConnectionBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.bar2 = new DevExpress.XtraBars.Bar();
          this.bar3 = new DevExpress.XtraBars.Bar();
          this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-         this.testSqliteConnectionBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.testMsssConnectionBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          this.SuspendLayout();
          // 
@@ -54,9 +55,10 @@
          this.barManager1.DockControls.Add(this.barDockControlRight);
          this.barManager1.Form = this;
          this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.testSqliteConnectionBarButtonItem});
+            this.testSqliteConnectionBarButtonItem,
+            this.testMsssConnectionBarButtonItem});
          this.barManager1.MainMenu = this.bar2;
-         this.barManager1.MaxItemId = 1;
+         this.barManager1.MaxItemId = 2;
          this.barManager1.StatusBar = this.bar3;
          // 
          // bar1
@@ -66,8 +68,16 @@
          this.bar1.DockRow = 1;
          this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
          this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.testSqliteConnectionBarButtonItem)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.testSqliteConnectionBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.testMsssConnectionBarButtonItem)});
          this.bar1.Text = "Tools";
+         // 
+         // testSqliteConnectionBarButtonItem
+         // 
+         this.testSqliteConnectionBarButtonItem.Caption = "Test Connection";
+         this.testSqliteConnectionBarButtonItem.Id = 0;
+         this.testSqliteConnectionBarButtonItem.Name = "testSqliteConnectionBarButtonItem";
+         this.testSqliteConnectionBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.testSqliteConnectionBarButtonItem_ItemClick);
          // 
          // bar2
          // 
@@ -97,53 +107,48 @@
          this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
          this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
          this.barDockControlTop.Manager = this.barManager1;
-         this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-         this.barDockControlTop.Size = new System.Drawing.Size(948, 62);
+         this.barDockControlTop.Size = new System.Drawing.Size(632, 48);
          // 
          // barDockControlBottom
          // 
          this.barDockControlBottom.CausesValidation = false;
          this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.barDockControlBottom.Location = new System.Drawing.Point(0, 388);
+         this.barDockControlBottom.Location = new System.Drawing.Point(0, 260);
          this.barDockControlBottom.Manager = this.barManager1;
-         this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-         this.barDockControlBottom.Size = new System.Drawing.Size(948, 18);
+         this.barDockControlBottom.Size = new System.Drawing.Size(632, 18);
          // 
          // barDockControlLeft
          // 
          this.barDockControlLeft.CausesValidation = false;
          this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-         this.barDockControlLeft.Location = new System.Drawing.Point(0, 62);
+         this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
          this.barDockControlLeft.Manager = this.barManager1;
-         this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-         this.barDockControlLeft.Size = new System.Drawing.Size(0, 326);
+         this.barDockControlLeft.Size = new System.Drawing.Size(0, 212);
          // 
          // barDockControlRight
          // 
          this.barDockControlRight.CausesValidation = false;
          this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-         this.barDockControlRight.Location = new System.Drawing.Point(948, 62);
+         this.barDockControlRight.Location = new System.Drawing.Point(632, 48);
          this.barDockControlRight.Manager = this.barManager1;
-         this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-         this.barDockControlRight.Size = new System.Drawing.Size(0, 326);
+         this.barDockControlRight.Size = new System.Drawing.Size(0, 212);
          // 
-         // testSqliteConnectionBarButtonItem
+         // testMsssConnectionBarButtonItem
          // 
-         this.testSqliteConnectionBarButtonItem.Caption = "Test Connection";
-         this.testSqliteConnectionBarButtonItem.Id = 0;
-         this.testSqliteConnectionBarButtonItem.Name = "testSqliteConnectionBarButtonItem";
-         this.testSqliteConnectionBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.testSqliteConnectionBarButtonItem_ItemClick);
+         this.testMsssConnectionBarButtonItem.Caption = "Test MSSS Connection";
+         this.testMsssConnectionBarButtonItem.Id = 1;
+         this.testMsssConnectionBarButtonItem.Name = "testMsssConnectionBarButtonItem";
+         this.testMsssConnectionBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.testMsssConnectionBarButtonItem_ItemClick);
          // 
          // Form1
          // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(948, 406);
+         this.ClientSize = new System.Drawing.Size(632, 278);
          this.Controls.Add(this.barDockControlLeft);
          this.Controls.Add(this.barDockControlRight);
          this.Controls.Add(this.barDockControlBottom);
          this.Controls.Add(this.barDockControlTop);
-         this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
          this.Name = "Form1";
          this.Text = "Form1";
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -163,6 +168,7 @@
       private DevExpress.XtraBars.BarDockControl barDockControlLeft;
       private DevExpress.XtraBars.BarDockControl barDockControlRight;
       private DevExpress.XtraBars.BarButtonItem testSqliteConnectionBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem testMsssConnectionBarButtonItem;
    }
 }
 
