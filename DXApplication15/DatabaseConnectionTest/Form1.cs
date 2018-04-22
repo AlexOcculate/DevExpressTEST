@@ -32,9 +32,6 @@ namespace DatabaseConnectionTest
             command.ExecuteNonQuery();
          }
       }
-      private void testmSqliteConnectionBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
-      {
-      }
 
       private void testMsssConnectionBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
