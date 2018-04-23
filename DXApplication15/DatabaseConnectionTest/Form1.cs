@@ -33,6 +33,7 @@ namespace DatabaseConnectionTest
          }
       }
 
+
       private void testMsssConnectionBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
          SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(  );
