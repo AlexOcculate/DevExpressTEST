@@ -1,13 +1,306 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace AQBConnection_Test
 {
-   public partial class MetadataItemGrid
+   public partial class MetadataItemProps
    {
+      private DataRow o;
+
+      #region --- ID ---
+      public const string ID_FIELDNAME = "ID";
+      public const string ID_DISPLAYNAME = "ID";
+      public const string ID_DESCRIPTION = null;
+      public const string ID_CATEGORY = "IDs";
+      public const string ID_XMLNAME = "id";
+      [DisplayName( ID_DISPLAYNAME )]
+      [Description( ID_DESCRIPTION )]
+      [Category( PARENT_ID_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( ID_XMLNAME )]
+      public int ID
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (int) this.o[ ID_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ ID_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- PARENT ID ---
+      public const string PARENT_ID_FIELDNAME = "ParentID";
+      public const string PARENT_ID_DISPLAYNAME = "Parent ID";
+      public const string PARENT_ID_DESCRIPTION = null;
+      public const string PARENT_ID_CATEGORY = "IDs";
+      public const string PARENT_ID_XMLNAME = "pid";
+      [DisplayName( PARENT_ID_DISPLAYNAME )]
+      [Description( PARENT_ID_DESCRIPTION )]
+      [Category( PARENT_ID_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( PARENT_ID_XMLNAME )]
+      public int ParentID
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (int) this.o[ PARENT_ID_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ PARENT_ID_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- METADATA PROVIDER ---
+      public const string METADATA_PROVIDER_FIELDNAME = "MetadataProvider";
+      public const string METADATA_PROVIDER_DISPLAYNAME = "Metadata Provider";
+      public const string METADATA_PROVIDER_DESCRIPTION = null;
+      public const string METADATA_PROVIDER_CATEGORY = "Query Builder";
+      public const string METADATA_PROVIDER_XMLNAME = "mp";
+      [DisplayName( METADATA_PROVIDER_DISPLAYNAME )]
+      [Description( METADATA_PROVIDER_DESCRIPTION )]
+      [Category( METADATA_PROVIDER_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( METADATA_PROVIDER_XMLNAME )]
+      public string MetadataProvider
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (string) this.o[ METADATA_PROVIDER_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ METADATA_PROVIDER_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- SYNTAX PROVIDER ---
+      public const string SYNTAX_PROVIDER_FIELDNAME = "SyntaxProvider";
+      public const string SYNTAX_PROVIDER_DISPLAYNAME = "Syntax Provider";
+      public const string SYNTAX_PROVIDER_DESCRIPTION = null;
+      public const string SYNTAX_PROVIDER_CATEGORY = "Query Builder";
+      public const string SYNTAX_PROVIDER_XMLNAME = "sp";
+      [DisplayName( SYNTAX_PROVIDER_DISPLAYNAME )]
+      [Description( SYNTAX_PROVIDER_DESCRIPTION )]
+      [Category( SYNTAX_PROVIDER_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( SYNTAX_PROVIDER_XMLNAME )]
+      public string SyntaxProvider
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (string) this.o[ SYNTAX_PROVIDER_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ SYNTAX_PROVIDER_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- TYPE ---
+      public const string TYPE_FIELDNAME = "Type";
+      public const string TYPE_DISPLAYNAME = "Type";
+      public const string TYPE_DESCRIPTION = null;
+      public const string TYPE_CATEGORY = "Types";
+      public const string TYPE_XMLNAME = "tp";
+      [DisplayName( TYPE_DISPLAYNAME )]
+      [Description( TYPE_DESCRIPTION )]
+      [Category( TYPE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( TYPE_XMLNAME )]
+      public string Type
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (string) this.o[ TYPE_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ TYPE_FIELDNAME ] = value;
+         }
+      }
+
+      #endregion
+
+      #region --- PARENT TYPE ---
+      public const string PARENT_TYPE_FIELDNAME = "ParentType";
+      public const string PARENT_TYPE_DISPLAYNAME = "Parent Type";
+      public const string PARENT_TYPE_DESCRIPTION = null;
+      public const string PARENT_TYPE_CATEGORY = "Types";
+      public const string PARENT_TYPE_XMLNAME = "pt";
+      [DisplayName( PARENT_TYPE_DISPLAYNAME )]
+      [Description( PARENT_TYPE_DESCRIPTION )]
+      [Category( PARENT_TYPE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( PARENT_TYPE_XMLNAME )]
+      public string ParentType
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (string) this.o[ PARENT_TYPE_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ PARENT_TYPE_FIELDNAME ] = value;
+         }
+      }
+
+      #endregion
+
+      #region --- IS SYSTEM ---
+      public const string IS_SYSTEM_FIELDNAME = "IsSystem";
+      public const string IS_SYSTEM_DISPLAYNAME = "Is System?";
+      public const string IS_SYSTEM_DESCRIPTION = null;
+      public const string IS_SYSTEM_CATEGORY = "Types";
+      public const string IS_SYSTEM_XMLNAME = "pt";
+      [DisplayName( IS_SYSTEM_DISPLAYNAME )]
+      [Description( IS_SYSTEM_DESCRIPTION )]
+      [Category( IS_SYSTEM_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( IS_SYSTEM_XMLNAME )]
+      public bool IsSystem
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (bool) this.o[ IS_SYSTEM_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ IS_SYSTEM_FIELDNAME ] = value;
+         }
+      }
+
+      #endregion
+
+      #region --- CARDINALITY ---
+      public const string CARDINALYTY_FIELDNAME = "Cardinality";
+      public const string CARDINALYTY_DISPLAYNAME = "FK Cardinality";
+      public const string CARDINALYTY_DESCRIPTION = null;
+      public const string CARDINALYTY_CATEGORY = "Cardinality";
+      public const string CARDINALYTY_XMLNAME = "cd";
+      [DisplayName( CARDINALYTY_DISPLAYNAME )]
+      [Description( CARDINALYTY_DESCRIPTION )]
+      [Category( CARDINALYTY_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( CARDINALYTY_XMLNAME )]
+      public string Cardinality
+      {
+         //[System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ CARDINALYTY_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ CARDINALYTY_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- FIELDS_COUNT ---
+      public const string FIELDSCOUNT_FIELDNAME = "FieldsCount";
+      public const string FIELDSCOUNT_DISPLAYNAME = "FK Fields Count";
+      public const string FIELDSCOUNT_DESCRIPTION = null;
+      public const string FIELDSCOUNT_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string FIELDSCOUNT_XMLNAME = "fc";
+      [DisplayName( FIELDSCOUNT_DISPLAYNAME )]
+      [Description( FIELDSCOUNT_DESCRIPTION )]
+      [Category( FIELDSCOUNT_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( FIELDSCOUNT_XMLNAME )]
+      public int FieldsCount
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            int value = (int) this.o[ FIELDSCOUNT_FIELDNAME ];
+            return value;
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ FIELDSCOUNT_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- FIELDS ---
+      public const string FIELDS_FIELDNAME = "Fields";
+      public const string FIELDS_DISPLAYNAME = "FK Fields";
+      public const string FIELDS_DESCRIPTION = null;
+      public const string FIELDS_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string FIELDS_XMLNAME = "fds";
+      [DisplayName( FIELDS_DISPLAYNAME )]
+      [Description( FIELDS_DESCRIPTION )]
+      [Category( FIELDS_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( FIELDS_XMLNAME )]
+      public List<string> Fields
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            List<string> l = new List<string>();
+            l.Add( this.o[ FIELDS_FIELDNAME ].ToString( ) );
+            return l;
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            //this.o[ FIELDS_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      public override string ToString()
+      {
+         //return string.Format("0:{1}", this.Type, this.NameFullQualified);
+         return base.ToString( );
+      }
+
+      public MetadataItemProps( DataRow row )
+      {
+         this.o = row;
+      }
+   }
+}
+
+/*
       #region --- TS_STR ---
       public const string TS_MASK_FORMAT = "{0:yyyyMMdd-HHmmss-ffffzzz}";
       [System.ComponentModel.DataAnnotations.Display( AutoGenerateField = false )]
@@ -22,141 +315,8 @@ namespace AQBConnection_Test
       }
       #endregion
 
-      #region --- METADATA PROVIDER ---
-      public const string METADATA_PROVIDER_FIELDNAME = "MetadataProvider";
-      public const string METADATA_PROVIDER_DISPLAYNAME = "Metadata Provider";
-      public const string METADATA_PROVIDER_XMLNAME = "mp";
-      [System.Xml.Serialization.XmlElement( METADATA_PROVIDER_XMLNAME )]
-      public string MetadataProvider
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-      #endregion
-
-      #region --- SYNTAX PROVIDER ---
-      public const string SYNTAX_PROVIDER_FIELDNAME = "SyntaxProvider";
-      public const string SYNTAX_PROVIDER_DISPLAYNAME = "Syntax Provider";
-      public const string SYNTAX_PROVIDER_XMLNAME = "sp";
-      [System.Xml.Serialization.XmlElement( SYNTAX_PROVIDER_XMLNAME )]
-      public string SyntaxProvider
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-      #endregion
-
-      #region --- ID ---
-      public const string ID_FIELDNAME = "ID";
-      public const string ID_DISPLAYNAME = "ID";
-      public const string ID_DESCRIPTION = null;
-      public const string ID_XMLNAME = "id";
-      [System.ComponentModel.DataAnnotations.Display( Name = ID_DISPLAYNAME, Description = ID_DESCRIPTION )]
-      [System.ComponentModel.ReadOnly( true )]
-      [System.Xml.Serialization.XmlAttribute( ID_XMLNAME )]
-      public int ID
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-      #endregion
-
-      #region --- PARENT ID ---
-      public const string PARENT_ID_FIELDNAME = "ParentID";
-      public const string PARENT_ID_DISPLAYNAME = "Parent ID";
-      public const string PARENT_ID_DESCRIPTION = null;
-      [System.ComponentModel.DataAnnotations.Display( Name = PARENT_ID_DISPLAYNAME, Description = PARENT_ID_DESCRIPTION )]
-      [System.ComponentModel.ReadOnly( true )]
-      [System.Xml.Serialization.XmlAttribute( "pid" )]
-      public int ParentID
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-      #endregion
-
-      #region --- IS SYSTEM ---
-      public const string IS_SYSTEM_FIELDNAME = "IsSystem";
-      public const string IS_SYSTEM_DISPLAYNAME = "Is System";
-      [System.Xml.Serialization.XmlAttribute]
-      public bool IsSystem
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-
-      #endregion
-
-      #region --- TYPE ---
-      public const string TYPE_FIELDNAME = "Type";
-      public const string TYPE_DISPLAYNAME = "Type";
-      [System.Xml.Serialization.XmlAttribute]
-      public string Type
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-
-      #endregion
-
-      #region --- PARENT TYPE ---
-      public const string PARENT_TYPE_FIELDNAME = "ParentType";
-      public const string PARENT_TYPE_DISPLAYNAME = "Parent Type";
-      [System.Xml.Serialization.XmlAttribute( "pt" )]
-      public string ParentType
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-
-      #endregion
-
-      public const string CARDINALYTY_FIELDNAME = "Cardinality";
-      public const string CARDINALYTY_DISPLAYNAME = "FK Cardinality";
-      public string Cardinality
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
 
 
-      public const string FIELDSCOUNT_FIELDNAME = "FieldsCount";
-      public const string FIELDSCOUNT_DISPLAYNAME = "FK Fields Count";
-      [System.Xml.Serialization.XmlElement( "fc" )]
-      public int FieldsCount
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
-
-
-      public const string FIELDS_FIELDNAME = "Fields";
-      public const string FIELDS_DISPLAYNAME = "FK Fields";
-      public string Fields
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
 
       public const string REFERENCED_CARDINALYTY_NAME_FIELDNAME = "ReferencedCardinality";
       public const string REFERENCED_CARDINALYTY_NAME_DISPLAYNAME = "TK Cardinality";
@@ -423,14 +583,4 @@ namespace AQBConnection_Test
          set;
       }
 
-      public override string ToString()
-      {
-         return string.Format( "0:{1}", this.Type, this.NameFullQualified );
-      }
-
-      public MetadataItemGrid()
-      {
-      }
-
-   }
-}
+*/

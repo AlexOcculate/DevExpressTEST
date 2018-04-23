@@ -73,7 +73,7 @@ namespace AQBConnection_Test
          DataTable table = this.aqbSqliteGridControl.DataSource as DataTable;
          // object o = this.claimsGridControl.DataSource;
          DataRow row = table.Rows[ dsRowIndex ];
-         this.propertyGridControl.SelectedObject = row;
+         this.propertyGridControl.SelectedObject = new MetadataItemProps( row );
       }
    }
 }
