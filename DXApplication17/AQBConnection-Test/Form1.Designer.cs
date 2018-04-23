@@ -54,9 +54,11 @@
          this.testAQBMsssAutoConnectionBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
          this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+         this.propertyGridControl = new DevExpress.XtraVerticalGrid.PropertyGridControl();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
          this.dockPanel1.SuspendLayout();
+         this.dockPanel1_Container.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
          this.aqbSqliteGridDockPanel.SuspendLayout();
@@ -65,6 +67,7 @@
          ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.aqbSqliteGridControl)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).BeginInit();
          this.SuspendLayout();
          // 
          // barManager1
@@ -200,6 +203,7 @@
          // 
          // dockPanel1_Container
          // 
+         this.dockPanel1_Container.Controls.Add(this.propertyGridControl);
          this.dockPanel1_Container.Location = new System.Drawing.Point(5, 38);
          this.dockPanel1_Container.Name = "dockPanel1_Container";
          this.dockPanel1_Container.Size = new System.Drawing.Size(191, 426);
@@ -270,6 +274,7 @@
          // 
          this.gridView1.GridControl = this.aqbSqliteGridControl;
          this.gridView1.Name = "gridView1";
+         this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
          // 
          // testAQBMsssAutoConnectionBarButtonItem
          // 
@@ -295,6 +300,14 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.testAQBMsssAutoConnectionBarButtonItem)});
          this.barSubItem2.Name = "barSubItem2";
          // 
+         // propertyGridControl
+         // 
+         this.propertyGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.propertyGridControl.Location = new System.Drawing.Point(0, 0);
+         this.propertyGridControl.Name = "propertyGridControl";
+         this.propertyGridControl.Size = new System.Drawing.Size(191, 426);
+         this.propertyGridControl.TabIndex = 0;
+         // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +323,7 @@
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
          this.dockPanel1.ResumeLayout(false);
+         this.dockPanel1_Container.ResumeLayout(false);
          ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
          this.aqbSqliteGridDockPanel.ResumeLayout(false);
@@ -318,6 +332,7 @@
          ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.aqbSqliteGridControl)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -349,6 +364,7 @@
       private DevExpress.XtraBars.BarSubItem barSubItem1;
       private DevExpress.XtraBars.BarSubItem barSubItem2;
       private DevExpress.XtraBars.BarButtonItem testAQBMsssAutoConnectionBarButtonItem;
+      private DevExpress.XtraVerticalGrid.PropertyGridControl propertyGridControl;
    }
 }
 
