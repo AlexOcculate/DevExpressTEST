@@ -40,7 +40,7 @@ namespace AQBConnection_Test
 
       #region --- PARENT ID ---
       public const string PARENT_ID_FIELDNAME = "ParentID";
-      public const string PARENT_ID_DISPLAYNAME = "Parent ID";
+      public const string PARENT_ID_DISPLAYNAME = "XXXXXXXParent ID";
       public const string PARENT_ID_DESCRIPTION = null;
       public const string PARENT_ID_CATEGORY = ID_CATEGORY;
       public const string PARENT_ID_XMLNAME = "pid";
@@ -61,6 +61,87 @@ namespace AQBConnection_Test
          set
          {
             this.o[ PARENT_ID_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- DATASTORE NAME ---
+      public const string DATASTORE_NAME_FIELDNAME = "DataStoreName";
+      public const string DATASTORE_NAME_DISPLAYNAME = "DataStore Name";
+      public const string DATASTORE_NAME_DESCRIPTION = null;
+      public const string DATASTORE_NAME_CATEGORY = ID_CATEGORY;
+      public const string DATASTORE_NAME_XMLNAME = "ds";
+      [DisplayName( DATASTORE_NAME_DISPLAYNAME )]
+      [Description( DATASTORE_NAME_DESCRIPTION )]
+      [Category( DATASTORE_NAME_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( DATASTORE_NAME_XMLNAME )]
+      public string DataStoreName
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (string) this.o[ DATASTORE_NAME_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ DATASTORE_NAME_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- SNAPSHOT FILE ---
+      public const string SNAPSHOT_FILE_FIELDNAME = "SnapshotFile";
+      public const string SNAPSHOT_FILE_DISPLAYNAME = "Snapshot File";
+      public const string SNAPSHOT_FILE_DESCRIPTION = null;
+      public const string SNAPSHOT_FILE_CATEGORY = ID_CATEGORY;
+      public const string SNAPSHOT_FILE_XMLNAME = "ss";
+      [DisplayName( SNAPSHOT_FILE_DISPLAYNAME )]
+      [Description( SNAPSHOT_FILE_DESCRIPTION )]
+      [Category( SNAPSHOT_FILE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( SNAPSHOT_FILE_XMLNAME )]
+      public string SnapshotFile
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (string) this.o[ SNAPSHOT_FILE_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ SNAPSHOT_FILE_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- LAST WRITE TIME UTC ---
+      public const string LASTWRITETIMEUTC_FIELDNAME = "LastWriteTimeUtc";
+      public const string LASTWRITETIMEUTC_DISPLAYNAME = "Las tWrite Time UTC";
+      public const string LASTWRITETIMEUTC_DESCRIPTION = null;
+      public const string LASTWRITETIMEUTC_CATEGORY = ID_CATEGORY;
+      public const string LASTWRITETIMEUTC_XMLNAME = "ss";
+      [DisplayName( LASTWRITETIMEUTC_DISPLAYNAME )]
+      [Description( LASTWRITETIMEUTC_DESCRIPTION )]
+      [Category( LASTWRITETIMEUTC_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( LASTWRITETIMEUTC_XMLNAME )]
+      public System.DateTime LastWriteTimeUtc
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (System.DateTime) this.o[ LASTWRITETIMEUTC_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ LASTWRITETIMEUTC_FIELDNAME ] = value;
          }
       }
       #endregion
@@ -852,6 +933,141 @@ namespace AQBConnection_Test
          set
          {
             this.o[ SIZE_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- IS PK ? ---
+      public const string IS_PK_FIELDNAME = "IsPK";
+      public const string IS_PK_DISPLAYNAME = "Is PK?";
+      public const string IS_PK_DESCRIPTION = null;
+      public const string IS_PK_CATEGORY = "Keys";
+      public const string IS_PK_XMLNAME = "pk";
+      [DisplayName( IS_PK_DISPLAYNAME )]
+      [Description( IS_PK_DESCRIPTION )]
+      [Category( IS_PK_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( IS_PK_XMLNAME )]
+      public bool IsPK
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (Boolean) this.o[ IS_PK_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ IS_PK_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- IS READONLY ? ---
+      public const string IS_READONLY_FIELDNAME = "IsRO";
+      public const string IS_READONLY_DISPLAYNAME = "Is R/O?";
+      public const string IS_READONLY_DESCRIPTION = null;
+      public const string IS_READONLY_CATEGORY = "Misc";
+      public const string IS_READONLY_XMLNAME = "ro";
+      [DisplayName( IS_READONLY_DISPLAYNAME )]
+      [Description( IS_READONLY_DESCRIPTION )]
+      [Category( IS_READONLY_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( IS_READONLY_XMLNAME )]
+      public bool IsRO
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (Boolean) this.o[ IS_READONLY_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ IS_READONLY_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- DESCRIPTION ---
+      public const string DESCRIPTION_FIELDNAME = "Description";
+      public const string DESCRIPTION_DISPLAYNAME = "Description";
+      public const string DESCRIPTION_DESCRIPTION = null;
+      public const string DESCRIPTION_CATEGORY = "Misc";
+      public const string DESCRIPTION_XMLNAME = "dscr";
+      [DisplayName( DESCRIPTION_DISPLAYNAME )]
+      [Description( DESCRIPTION_DESCRIPTION )]
+      [Category( DESCRIPTION_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( DESCRIPTION_XMLNAME )]
+      public string Description
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ DESCRIPTION_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ DESCRIPTION_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- TAG ---
+      public const string TAG_FIELDNAME = "Tag";
+      public const string TAG_DISPLAYNAME = "Tag";
+      public const string TAG_DESCRIPTION = null;
+      public const string TAG_CATEGORY = "Misc";
+      public const string TAG_XMLNAME = "tag";
+      [DisplayName( TAG_DISPLAYNAME )]
+      [Description( TAG_DESCRIPTION )]
+      [Category( TAG_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( TAG_XMLNAME )]
+      public object Tag
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ TAG_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ TAG_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- USERDATA ---
+      public const string USERDATA_FIELDNAME = "UserData";
+      public const string USERDATA_DISPLAYNAME = "Tag";
+      public const string USERDATA_DESCRIPTION = null;
+      public const string USERDATA_CATEGORY = "Misc";
+      public const string USERDATA_XMLNAME = "ud";
+      [DisplayName( USERDATA_DISPLAYNAME )]
+      [Description( USERDATA_DESCRIPTION )]
+      [Category( USERDATA_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( USERDATA_XMLNAME )]
+      public string UserData
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ USERDATA_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ USERDATA_FIELDNAME ] = value;
          }
       }
       #endregion

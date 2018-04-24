@@ -84,6 +84,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FullQualifiedName.cs" />
+    <Compile Include="MetadataItemPropField.cs" />
     <Compile Include="MetadataItemProps.cs" />
     <Compile Include="MetadataPullerXtraUserControl.cs" />
     <Compile Include="Program.cs" />
