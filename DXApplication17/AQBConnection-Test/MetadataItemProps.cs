@@ -42,7 +42,7 @@ namespace AQBConnection_Test
       public const string PARENT_ID_FIELDNAME = "ParentID";
       public const string PARENT_ID_DISPLAYNAME = "Parent ID";
       public const string PARENT_ID_DESCRIPTION = null;
-      public const string PARENT_ID_CATEGORY = "IDs";
+      public const string PARENT_ID_CATEGORY = ID_CATEGORY;
       public const string PARENT_ID_XMLNAME = "pid";
       [DisplayName( PARENT_ID_DISPLAYNAME )]
       [Description( PARENT_ID_DESCRIPTION )]
@@ -275,7 +275,7 @@ namespace AQBConnection_Test
          [System.Diagnostics.DebuggerStepThrough]
          get
          {
-            List<string> l = new List<string>();
+            List<string> l = new List<string>( );
             l.Add( this.o[ FIELDS_FIELDNAME ].ToString( ) );
             return l;
          }
@@ -283,6 +283,575 @@ namespace AQBConnection_Test
          set
          {
             //this.o[ FIELDS_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- ReferencedCardinality ---
+      public const string REFERENCED_CARDINALYTY_NAME_FIELDNAME = "ReferencedCardinality";
+      public const string REFERENCED_CARDINALYTY_NAME_DISPLAYNAME = "TK Cardinality";
+      public const string REFERENCED_CARDINALYTY_NAME_DESCRIPTION = null;
+      public const string REFERENCED_CARDINALYTY_NAME_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string REFERENCED_CARDINALYTY_NAME_XMLNAME = "rc";
+      [DisplayName( REFERENCED_CARDINALYTY_NAME_DISPLAYNAME )]
+      [Description( REFERENCED_CARDINALYTY_NAME_DESCRIPTION )]
+      [Category( REFERENCED_CARDINALYTY_NAME_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( REFERENCED_CARDINALYTY_NAME_XMLNAME )]
+      public string ReferencedCardinality
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ REFERENCED_CARDINALYTY_NAME_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ REFERENCED_CARDINALYTY_NAME_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- ReferencedObject ---
+      public const string REFERENCED_OBJECT_FIELDNAME = "ReferencedObject";
+      public const string REFERENCED_OBJECT_DISPLAYNAME = "TK Object";
+      public const string REFERENCED_OBJECT_DESCRIPTION = null;
+      public const string REFERENCED_OBJECT_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string REFERENCED_OBJECT_XMLNAME = "ro";
+      [DisplayName( REFERENCED_OBJECT_DISPLAYNAME )]
+      [Description( REFERENCED_OBJECT_DESCRIPTION )]
+      [Category( REFERENCED_OBJECT_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( REFERENCED_OBJECT_XMLNAME )]
+      public string ReferencedObject
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ REFERENCED_OBJECT_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ REFERENCED_OBJECT_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- ReferencedObjectName ---
+      public const string REFERENCED_OBJECT_NAME_FIELDNAME = "ReferencedObjectName";
+      public const string REFERENCED_OBJECT_NAME_DISPLAYNAME = "TK Object Name";
+      public const string REFERENCED_OBJECT_NAME_DESCRIPTION = null;
+      public const string REFERENCED_OBJECT_NAME_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string REFERENCED_OBJECT_NAME_XMLNAME = "ron";
+      [DisplayName( REFERENCED_OBJECT_NAME_DISPLAYNAME )]
+      [Description( REFERENCED_OBJECT_NAME_DESCRIPTION )]
+      [Category( REFERENCED_OBJECT_NAME_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( REFERENCED_OBJECT_NAME_XMLNAME )]
+      public string ReferencedObjectName
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ REFERENCED_OBJECT_NAME_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ REFERENCED_OBJECT_NAME_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- ReferencedFieldCount ---
+      public const string REFERENCED_FIELDS_COUNT_FIELDNAME = "ReferencedFieldsCount";
+      public const string REFERENCED_FIELDS_COUNT_DISPLAYNAME = "TK Fields Count";
+      public const string REFERENCED_FIELDS_COUNT_DESCRIPTION = null;
+      public const string REFERENCED_FIELDS_COUNT_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string REFERENCED_FIELDS_COUNT_XMLNAME = "rfc";
+      [DisplayName( REFERENCED_FIELDS_COUNT_DISPLAYNAME )]
+      [Description( REFERENCED_FIELDS_COUNT_DESCRIPTION )]
+      [Category( REFERENCED_FIELDS_COUNT_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( REFERENCED_FIELDS_COUNT_XMLNAME )]
+      public int ReferencedFieldsCount
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (int) this.o[ REFERENCED_FIELDS_COUNT_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ REFERENCED_FIELDS_COUNT_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- ReferencedFields ---
+      public const string REFERENCED_FIELDS_FIELDNAME = "ReferencedFields";
+      public const string REFERENCED_FIELDS_DISPLAYNAME = "TK Fields";
+      public const string REFERENCED_FIELDS_DESCRIPTION = null;
+      public const string REFERENCED_FIELDS_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string REFERENCED_FIELDS_XMLNAME = "rf";
+      [DisplayName( REFERENCED_FIELDS_DISPLAYNAME )]
+      [Description( REFERENCED_FIELDS_DESCRIPTION )]
+      [Category( REFERENCED_FIELDS_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( REFERENCED_FIELDS_XMLNAME )]
+      public List<string> ReferencedFields
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            List<string> l = new List<string>( );
+            l.Add( this.o[ REFERENCED_FIELDS_FIELDNAME ].ToString( ) );
+            return l;
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            //this.o[ REFERENCED_FIELDS_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- SERVER ---
+      public const string SERVER_FIELDNAME = "Server";
+      public const string SERVER_DISPLAYNAME = "Server";
+      public const string SERVER_DESCRIPTION = null;
+      public const string SERVER_CATEGORY = ID_CATEGORY;
+      public const string SERVER_XMLNAME = "svr";
+      [DisplayName( SERVER_DISPLAYNAME )]
+      [Description( SERVER_DESCRIPTION )]
+      [Category( SERVER_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( SERVER_XMLNAME )]
+      public string Server
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ SERVER_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ SERVER_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- DATABASE ---
+      public const string DATABASE_FIELDNAME = "Database";
+      public const string DATABASE_DISPLAYNAME = "Database";
+      public const string DATABASE_DESCRIPTION = null;
+      public const string DATABASE_CATEGORY = ID_CATEGORY;
+      public const string DATABASE_XMLNAME = "db";
+      [DisplayName( DATABASE_DISPLAYNAME )]
+      [Description( DATABASE_DESCRIPTION )]
+      [Category( DATABASE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( DATABASE_XMLNAME )]
+      public string Database
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ DATABASE_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ DATABASE_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- SCHEMA ---
+      public const string SCHEMA_FIELDNAME = "Schema";
+      public const string SCHEMA_DISPLAYNAME = "Schema";
+      public const string SCHEMA_DESCRIPTION = null;
+      public const string SCHEMA_CATEGORY = ID_CATEGORY;
+      public const string SCHEMA_XMLNAME = "sch";
+      [DisplayName( SCHEMA_DISPLAYNAME )]
+      [Description( SCHEMA_DESCRIPTION )]
+      [Category( SCHEMA_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( SCHEMA_XMLNAME )]
+      public string Schema
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ SCHEMA_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ SCHEMA_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- OBJECT_NAME ---
+      public const string OBJECT_FIELDNAME = "ObjectName";
+      public const string OBJECT_DISPLAYNAME = "Parent Name";
+      public const string OBJECT_DESCRIPTION = null;
+      public const string OBJECT_CATEGORY = ID_CATEGORY;
+      public const string OBJECT_XMLNAME = "on";
+      [DisplayName( OBJECT_DISPLAYNAME )]
+      [Description( OBJECT_DESCRIPTION )]
+      [Category( OBJECT_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( OBJECT_XMLNAME )]
+      public string ObjectName
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ OBJECT_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ OBJECT_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- NameFullQualified ---
+      public const string NAMEFULLQUALIFIED_FIELDNAME = "NameFullQualified";
+      public const string NAMEFULLQUALIFIED_DISPLAYNAME = "Name Full Qualified";
+      public const string NAMEFULLQUALIFIED_DESCRIPTION = null;
+      public const string NAMEFULLQUALIFIED_CATEGORY = ID_CATEGORY;
+      public const string NAMEFULLQUALIFIED_XMLNAME = "nfq";
+      [DisplayName( NAMEFULLQUALIFIED_DISPLAYNAME )]
+      [Description( NAMEFULLQUALIFIED_DESCRIPTION )]
+      [Category( NAMEFULLQUALIFIED_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( NAMEFULLQUALIFIED_XMLNAME )]
+      public string NameFullQualified
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ NAMEFULLQUALIFIED_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ NAMEFULLQUALIFIED_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- NameQuoted ---
+      public const string NAMEQUOTED_FIELDNAME = "NameQuoted";
+      public const string NAMEQUOTED_DISPLAYNAME = "Name Full Qualified";
+      public const string NAMEQUOTED_DESCRIPTION = null;
+      public const string NAMEQUOTED_CATEGORY = ID_CATEGORY;
+      public const string NAMEQUOTED_XMLNAME = "nq";
+      [DisplayName( NAMEQUOTED_DISPLAYNAME )]
+      [Description( NAMEQUOTED_DESCRIPTION )]
+      [Category( NAMEQUOTED_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( NAMEQUOTED_XMLNAME )]
+      public string NameQuoted
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ NAMEQUOTED_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ NAMEQUOTED_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- ALT NAME ----
+      public const string ALTNAME_FIELDNAME = "AltName";
+      public const string ALTNAME_DISPLAYNAME = "Alt Name";
+      public const string ALTNAME_DESCRIPTION = null;
+      public const string ALTNAME_CATEGORY = ID_CATEGORY;
+      public const string ALTNAME_XMLNAME = "an";
+      [DisplayName( ALTNAME_DISPLAYNAME )]
+      [Description( ALTNAME_DESCRIPTION )]
+      [Category( ALTNAME_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( ALTNAME_XMLNAME )]
+      public string AltName
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ ALTNAME_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ ALTNAME_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- FIELD ---
+      public const string FIELD_FIELDNAME = "Field";
+      public const string FIELD_DISPLAYNAME = "Name";
+      public const string FIELD_DESCRIPTION = null;
+      public const string FIELD_CATEGORY = ID_CATEGORY;
+      public const string FIELD_XMLNAME = "fld";
+      [DisplayName( FIELD_DISPLAYNAME )]
+      [Description( FIELD_DESCRIPTION )]
+      [Category( FIELD_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( FIELD_XMLNAME )]
+      public string Field
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ FIELD_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ FIELD_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- HAS DEFAULT ---
+      public const string HAS_DEFAULT_FIELDNAME = "HasDefault";
+      public const string HAS_DEFAULT_DISPLAYNAME = "Has Default?";
+      public const string HAS_DEFAULT_DESCRIPTION = null;
+      public const string HAS_DEFAULT_CATEGORY = "Misc";
+      public const string HAS_DEFAULT_XMLNAME = "hd";
+      [DisplayName( HAS_DEFAULT_DISPLAYNAME )]
+      [Description( HAS_DEFAULT_DESCRIPTION )]
+      [Category( HAS_DEFAULT_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( HAS_DEFAULT_XMLNAME )]
+      public bool HasDefault
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (Boolean) this.o[ HAS_DEFAULT_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ HAS_DEFAULT_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- EXPRESSION ---
+      public const string EXPRESSION_FIELDNAME = "Expression";
+      public const string EXPRESSION_DISPLAYNAME = "Expression";
+      public const string EXPRESSION_DESCRIPTION = null;
+      public const string EXPRESSION_CATEGORY = "Misc";
+      public const string EXPRESSION_XMLNAME = "xpr";
+      [DisplayName( EXPRESSION_DISPLAYNAME )]
+      [Description( EXPRESSION_DESCRIPTION )]
+      [Category( EXPRESSION_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( EXPRESSION_XMLNAME )]
+      public string Expression
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ EXPRESSION_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ EXPRESSION_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- FIELD TYPE ---
+      public const string FIELD_TYPE_FIELDNAME = "FieldType";
+      public const string FIELD_TYPE_DISPLAYNAME = ".Net Type Name";
+      public const string FIELD_TYPE_DESCRIPTION = null;
+      public const string FIELD_TYPE_CATEGORY = "Misc";
+      public const string FIELD_TYPE_XMLNAME = "ft";
+      [DisplayName( FIELD_TYPE_DISPLAYNAME )]
+      [Description( FIELD_TYPE_DESCRIPTION )]
+      [Category( FIELD_TYPE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( FIELD_TYPE_XMLNAME )]
+      public string FieldType
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ FIELD_TYPE_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ FIELD_TYPE_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- FIELD TYPE NAME ---
+      public const string FIELD_TYPE_NAME_FIELDNAME = "FieldTypeName";
+      public const string FIELD_TYPE_NAME_DISPLAYNAME = "Database Type Name";
+      public const string FIELD_TYPE_NAME_DESCRIPTION = null;
+      public const string FIELD_TYPE_NAME_CATEGORY = "Misc";
+      public const string FIELD_TYPE_NAME_XMLNAME = "ftn";
+      [DisplayName( FIELD_TYPE_NAME_DISPLAYNAME )]
+      [Description( FIELD_TYPE_NAME_DESCRIPTION )]
+      [Category( FIELD_TYPE_NAME_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( FIELD_TYPE_NAME_XMLNAME )]
+      public string FieldTypeName
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return this.o[ FIELD_TYPE_NAME_FIELDNAME ].ToString( );
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ FIELD_TYPE_NAME_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- IS NULLABLE ---
+      public const string IS_NULLABLE_FIELDNAME = "IsNullable";
+      public const string IS_NULLABLE_DISPLAYNAME = "Is Nullable?";
+      public const string IS_NULLABLE_DESCRIPTION = null;
+      public const string IS_NULLABLE_CATEGORY = "Misc";
+      public const string IS_NULLABLE_XMLNAME = "nlb";
+      [DisplayName( IS_NULLABLE_DISPLAYNAME )]
+      [Description( IS_NULLABLE_DESCRIPTION )]
+      [Category( IS_NULLABLE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlAttribute( IS_NULLABLE_XMLNAME )]
+      public bool IsNullable
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (Boolean) this.o[ IS_NULLABLE_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ IS_NULLABLE_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- PREC ---
+      public const string PRECISION_FIELDNAME = "Precision";
+      public const string PRECISION_DISPLAYNAME = "Prec";
+      public const string PRECISION_DESCRIPTION = null;
+      public const string PRECISION_CATEGORY = "Misc";
+      public const string PRECISION_XMLNAME = "prec";
+      [DisplayName( PRECISION_DISPLAYNAME )]
+      [Description( PRECISION_DESCRIPTION )]
+      [Category( PRECISION_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( PRECISION_XMLNAME )]
+      public int Precision
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (int) this.o[ PRECISION_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ PRECISION_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- SCALE ---
+      public const string SCALE_FIELDNAME = "Scale";
+      public const string SCALE_DISPLAYNAME = "Scale";
+      public const string SCALE_DESCRIPTION = null;
+      public const string SCALE_CATEGORY = "Misc";
+      public const string SCALE_XMLNAME = "sc";
+      [DisplayName( SCALE_DISPLAYNAME )]
+      [Description( SCALE_DESCRIPTION )]
+      [Category( SCALE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( SCALE_XMLNAME )]
+      public int Scale
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (int) this.o[ SCALE_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ SCALE_FIELDNAME ] = value;
+         }
+      }
+      #endregion
+
+      #region --- SIZE ---
+      public const string SIZE_FIELDNAME = "Size";
+      public const string SIZE_DISPLAYNAME = "Size";
+      public const string SIZE_DESCRIPTION = null;
+      public const string SIZE_CATEGORY = "Misc";
+      public const string SIZE_XMLNAME = "sz";
+      [DisplayName( SIZE_DISPLAYNAME )]
+      [Description( SIZE_DESCRIPTION )]
+      [Category( SIZE_CATEGORY )]
+      [ReadOnly( true )]
+      [Browsable( true )]
+      [XmlElement( SIZE_XMLNAME )]
+      public long Size
+      {
+         [System.Diagnostics.DebuggerStepThrough]
+         get
+         {
+            return (int) this.o[ SIZE_FIELDNAME ];
+         }
+         [System.Diagnostics.DebuggerStepThrough]
+         set
+         {
+            this.o[ SIZE_FIELDNAME ] = value;
          }
       }
       #endregion
@@ -318,16 +887,6 @@ namespace AQBConnection_Test
 
 
 
-      public const string REFERENCED_CARDINALYTY_NAME_FIELDNAME = "ReferencedCardinality";
-      public const string REFERENCED_CARDINALYTY_NAME_DISPLAYNAME = "TK Cardinality";
-      [System.Xml.Serialization.XmlElement( "rc" )]
-      public string ReferencedCardinality
-      {
-         [System.Diagnostics.DebuggerStepThrough]
-         get;
-         [System.Diagnostics.DebuggerStepThrough]
-         set;
-      }
 
 
       public const string REFERENCED_OBJECT_FIELDNAME = "ReferencedObject";
