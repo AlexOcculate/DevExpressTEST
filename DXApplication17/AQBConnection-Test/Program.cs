@@ -18,7 +18,7 @@ namespace AQBConnection_Test
       {
          Application.EnableVisualStyles( );
          Application.SetCompatibleTextRenderingDefault( false );
-
+          
          BonusSkins.Register( );
          SkinManager.EnableFormSkins( );
          Application.Run( new Form1( ) );
