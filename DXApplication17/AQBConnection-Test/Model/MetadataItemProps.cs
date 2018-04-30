@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace AQBConnection_Test
+namespace AQBConnection_Test.Model
 {
    public partial class MetadataItemProps
    {
@@ -40,7 +40,7 @@ namespace AQBConnection_Test
 
       #region --- PARENT ID ---
       public const string PARENT_ID_FIELDNAME = "ParentID";
-      public const string PARENT_ID_DISPLAYNAME = "XXXXXXXParent ID";
+      public const string PARENT_ID_DISPLAYNAME = "Parent ID";
       public const string PARENT_ID_DESCRIPTION = null;
       public const string PARENT_ID_CATEGORY = ID_CATEGORY;
       public const string PARENT_ID_XMLNAME = "pid";
@@ -369,28 +369,28 @@ namespace AQBConnection_Test
       #endregion
 
       #region --- ReferencedCardinality ---
-      public const string REFERENCED_CARDINALYTY_NAME_FIELDNAME = "ReferencedCardinality";
-      public const string REFERENCED_CARDINALYTY_NAME_DISPLAYNAME = "TK Cardinality";
-      public const string REFERENCED_CARDINALYTY_NAME_DESCRIPTION = null;
-      public const string REFERENCED_CARDINALYTY_NAME_CATEGORY = CARDINALYTY_CATEGORY;
-      public const string REFERENCED_CARDINALYTY_NAME_XMLNAME = "rc";
-      [DisplayName( REFERENCED_CARDINALYTY_NAME_DISPLAYNAME )]
-      [Description( REFERENCED_CARDINALYTY_NAME_DESCRIPTION )]
-      [Category( REFERENCED_CARDINALYTY_NAME_CATEGORY )]
+      public const string REFERENCED_CARDINALYTY_FIELDNAME = "ReferencedCardinality";
+      public const string REFERENCED_CARDINALYTY_DISPLAYNAME = "TK Cardinality";
+      public const string REFERENCED_CARDINALYTY_DESCRIPTION = null;
+      public const string REFERENCED_CARDINALYTY_CATEGORY = CARDINALYTY_CATEGORY;
+      public const string REFERENCED_CARDINALYTY_XMLNAME = "rc";
+      [DisplayName( REFERENCED_CARDINALYTY_DISPLAYNAME )]
+      [Description( REFERENCED_CARDINALYTY_DESCRIPTION )]
+      [Category( REFERENCED_CARDINALYTY_CATEGORY )]
       [ReadOnly( true )]
       [Browsable( true )]
-      [XmlAttribute( REFERENCED_CARDINALYTY_NAME_XMLNAME )]
+      [XmlAttribute( REFERENCED_CARDINALYTY_XMLNAME )]
       public string ReferencedCardinality
       {
          [System.Diagnostics.DebuggerStepThrough]
          get
          {
-            return this.o[ REFERENCED_CARDINALYTY_NAME_FIELDNAME ].ToString( );
+            return this.o[ REFERENCED_CARDINALYTY_FIELDNAME ].ToString( );
          }
          [System.Diagnostics.DebuggerStepThrough]
          set
          {
-            this.o[ REFERENCED_CARDINALYTY_NAME_FIELDNAME ] = value;
+            this.o[ REFERENCED_CARDINALYTY_FIELDNAME ] = value;
          }
       }
       #endregion

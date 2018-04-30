@@ -84,10 +84,27 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FullQualifiedName.cs" />
-    <Compile Include="MetadataItemPropField.cs" />
-    <Compile Include="MetadataItemProps.cs" />
-    <Compile Include="MetadataPullerXtraUserControl.cs" />
+    <Compile Include="Model\FullQualifiedName.cs" />
+    <Compile Include="Model\MetadataItemPropsAggregate.cs" />
+    <Compile Include="Model\MetadataItemPropsDatabase.cs" />
+    <Compile Include="Model\MetadataItemPropField.cs" />
+    <Compile Include="Model\MetadataItemProps.cs" />
+    <Compile Include="Model\MetadataItemPropsField.cs" />
+    <Compile Include="Model\MetadataItemPropsFK.cs" />
+    <Compile Include="Model\MetadataItemPropsNamespace.cs" />
+    <Compile Include="Model\MetadataItemPropsObjectMetadata.cs" />
+    <Compile Include="Model\MetadataItemPropsObjects.cs" />
+    <Compile Include="Model\MetadataItemPropsPackage.cs" />
+    <Compile Include="Model\MetadataItemPropsParameter.cs" />
+    <Compile Include="Model\MetadataItemPropsServer.cs" />
+    <Compile Include="Model\MetadataItemPropsUserField.cs" />
+    <Compile Include="Model\MetadataItemPropsUserQuery.cs" />
+    <Compile Include="Model\MetadataPullerXtraUserControl.cs" />
+    <Compile Include="Model\MetadataItemPropsProcedure.cs" />
+    <Compile Include="Model\MetadataItemPropsSchema.cs" />
+    <Compile Include="Model\MetadataItemPropsSynonym.cs" />
+    <Compile Include="Model\MetadataItemPropsTable.cs" />
+    <Compile Include="Model\MetadataItemPropsView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -99,7 +116,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="MetadataItemGrid.cs" />
+    <Compile Include="Model\MetadataItemGrid.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>

@@ -51,8 +51,8 @@
          this.propertyGridControl = new DevExpress.XtraVerticalGrid.PropertyGridControl();
          this.aqbSqliteGridDockPanel = new DevExpress.XtraBars.Docking.DockPanel();
          this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-         this.aqbSqliteGridControl = new DevExpress.XtraGrid.GridControl();
-         this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+         this.aqbGridControl = new DevExpress.XtraGrid.GridControl();
+         this.aqbGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
          this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
          this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
          ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
@@ -64,8 +64,8 @@
          ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).BeginInit();
          this.aqbSqliteGridDockPanel.SuspendLayout();
          this.dockPanel2_Container.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.aqbSqliteGridControl)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControl)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridView)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
          this.SuspendLayout();
@@ -267,7 +267,7 @@
          // 
          // dockPanel2_Container
          // 
-         this.dockPanel2_Container.Controls.Add(this.aqbSqliteGridControl);
+         this.dockPanel2_Container.Controls.Add(this.aqbGridControl);
          this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
          this.dockPanel2_Container.Name = "dockPanel2_Container";
          this.dockPanel2_Container.Size = new System.Drawing.Size(483, 671);
@@ -275,21 +275,21 @@
          // 
          // aqbSqliteGridControl
          // 
-         this.aqbSqliteGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.aqbSqliteGridControl.Location = new System.Drawing.Point(0, 0);
-         this.aqbSqliteGridControl.MainView = this.gridView1;
-         this.aqbSqliteGridControl.MenuManager = this.barManager1;
-         this.aqbSqliteGridControl.Name = "aqbSqliteGridControl";
-         this.aqbSqliteGridControl.Size = new System.Drawing.Size(483, 671);
-         this.aqbSqliteGridControl.TabIndex = 0;
-         this.aqbSqliteGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+         this.aqbGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.aqbGridControl.Location = new System.Drawing.Point(0, 0);
+         this.aqbGridControl.MainView = this.aqbGridView;
+         this.aqbGridControl.MenuManager = this.barManager1;
+         this.aqbGridControl.Name = "aqbSqliteGridControl";
+         this.aqbGridControl.Size = new System.Drawing.Size(483, 671);
+         this.aqbGridControl.TabIndex = 0;
+         this.aqbGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.aqbGridView});
          // 
          // gridView1
          // 
-         this.gridView1.GridControl = this.aqbSqliteGridControl;
-         this.gridView1.Name = "gridView1";
-         this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+         this.aqbGridView.GridControl = this.aqbGridControl;
+         this.aqbGridView.Name = "gridView1";
+         this.aqbGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
          // 
          // documentManager1
          // 
@@ -329,8 +329,8 @@
          ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).EndInit();
          this.aqbSqliteGridDockPanel.ResumeLayout(false);
          this.dockPanel2_Container.ResumeLayout(false);
-         ((System.ComponentModel.ISupportInitialize)(this.aqbSqliteGridControl)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControl)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridView)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
          this.ResumeLayout(false);
@@ -359,8 +359,8 @@
       private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
       private DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup documentGroup1;
       private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document document1;
-      private DevExpress.XtraGrid.GridControl aqbSqliteGridControl;
-      private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+      private DevExpress.XtraGrid.GridControl aqbGridControl;
+      private DevExpress.XtraGrid.Views.Grid.GridView aqbGridView;
       private DevExpress.XtraBars.BarSubItem barSubItem1;
       private DevExpress.XtraBars.BarSubItem barSubItem2;
       private DevExpress.XtraBars.BarButtonItem testAQBMsssAutoConnectionBarButtonItem;

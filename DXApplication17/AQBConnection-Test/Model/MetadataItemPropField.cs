@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AQBConnection_Test.Model;
+using System;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace AQBConnection_Test
@@ -13,7 +11,7 @@ namespace AQBConnection_Test
    {
       private DataRow o;
 
-      public MetadataItemPropField( DataRow o )
+      public MetadataItemPropField(DataRow o)
       {
          this.o = o;
       }
@@ -22,13 +20,14 @@ namespace AQBConnection_Test
       {
          get
          {
-            return new FullQualifiedName( );
+            return new FullQualifiedName();
          }
 
          set
          {
          }
       }
+
       #region --- ID ---
       [DisplayName( MetadataItemProps.ID_DISPLAYNAME )]
       [Description( MetadataItemProps.ID_DESCRIPTION )]
@@ -41,15 +40,14 @@ namespace AQBConnection_Test
          [System.Diagnostics.DebuggerStepThrough]
          get
          {
-            return (int) this.o[ MetadataItemProps.ID_FIELDNAME ];
+            return (int) this.o[MetadataItemProps.ID_FIELDNAME];
          }
          [System.Diagnostics.DebuggerStepThrough]
          set
          {
-            this.o[ MetadataItemProps.ID_FIELDNAME ] = value;
+            this.o[MetadataItemProps.ID_FIELDNAME] = value;
          }
       }
       #endregion
-
    }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
+using AQBConnection_Test.Model;
 
 namespace DPControls.Controls.MetadataPuller
 {
@@ -429,7 +431,6 @@ namespace DPControls.Controls.MetadataPuller
          , int parentID
          , System.Data.DataTable tbl
          )
-
       {
          row[ "ID" ] = tbl.Rows.Count;
          row[ "ParentID" ] = parentID;
@@ -746,6 +747,91 @@ namespace DPControls.Controls.MetadataPuller
          return t;
       }
       #endregion
+
+      public static MetadataItemProps CreateMetadataItemProps( DataRow row )
+      {
+         string type = (string) row[ MetadataItemProps.TYPE_FIELDNAME ];
+         switch( type )
+         {
+            case "Server":
+               return new MetadataItemPropsServer( row );
+            case "Database":
+               return new MetadataItemPropsDatabase( row );
+            case "Schema":
+               return new MetadataItemPropsSchema( row );
+            case "Namespace":
+               return new MetadataItemPropsNamespace( row );
+            case "Objects":
+               return new MetadataItemPropsObjects( row );
+            case "Table":
+               return new MetadataItemPropsTable( row );
+            case "View":
+               return new MetadataItemPropsView( row );
+            case "Synonym":
+               return new MetadataItemPropsSynonym( row );
+            case "Field":
+               return new MetadataItemPropsField( row );
+            case "ForeignKey":
+               return new MetadataItemPropsFK( row );
+            case "Package":
+               return new MetadataItemPropsPackage( row );
+            case "Procedure":
+               return new MetadataItemPropsProcedure( row );
+            case "Parameter":
+               return new MetadataItemPropsParameter( row );
+            case "ObjectMetadata":
+               return new MetadataItemPropsObjectMetadata( row );
+            case "Aggregate":
+               return new MetadataItemPropsAggregate( row );
+            case "UserQuery":
+               return new MetadataItemPropsUserQuery( row );
+            case "UserField":
+               return new MetadataItemPropsUserField( row );
+            default:
+               return new MetadataItemProps( row );
+         }
+      }
+
+      public static bool IsFieldVisibleByDefault( string fieldName )
+      {
+         switch( fieldName )
+         {
+            case MetadataItemProps.ALTNAME_FIELDNAME:
+            case MetadataItemProps.CARDINALYTY_FIELDNAME:
+            case MetadataItemProps.DESCRIPTION_FIELDNAME:
+            case MetadataItemProps.EXPRESSION_FIELDNAME:
+            case MetadataItemProps.FIELD_TYPE_FIELDNAME:
+            case MetadataItemProps.FIELD_TYPE_NAME_FIELDNAME:
+            case MetadataItemProps.FIELDS_FIELDNAME:
+            case MetadataItemProps.FIELDSCOUNT_FIELDNAME:
+            case MetadataItemProps.HAS_DEFAULT_FIELDNAME:
+            case MetadataItemProps.IS_NULLABLE_FIELDNAME:
+            case MetadataItemProps.IS_PK_FIELDNAME:
+            case MetadataItemProps.IS_READONLY_FIELDNAME:
+            case MetadataItemProps.IS_SYSTEM_FIELDNAME:
+            case MetadataItemProps.LASTWRITETIMEUTC_FIELDNAME:
+            case MetadataItemProps.METADATA_PROVIDER_FIELDNAME:
+            case MetadataItemProps.NAMEFULLQUALIFIED_FIELDNAME:
+            case MetadataItemProps.NAMEQUOTED_FIELDNAME:
+            case MetadataItemProps.OBJECT_FIELDNAME:
+            case MetadataItemProps.PRECISION_FIELDNAME:
+            case MetadataItemProps.REFERENCED_CARDINALYTY_FIELDNAME:
+            case MetadataItemProps.REFERENCED_FIELDS_FIELDNAME:
+            case MetadataItemProps.REFERENCED_FIELDS_COUNT_FIELDNAME:
+            case MetadataItemProps.REFERENCED_OBJECT_FIELDNAME:
+            case MetadataItemProps.REFERENCED_OBJECT_NAME_FIELDNAME:
+            case MetadataItemProps.SCALE_FIELDNAME:
+            case MetadataItemProps.SERVER_FIELDNAME:
+            case MetadataItemProps.SIZE_FIELDNAME:
+            case MetadataItemProps.SNAPSHOT_FILE_FIELDNAME:
+            case MetadataItemProps.SYNTAX_PROVIDER_FIELDNAME:
+            case MetadataItemProps.TAG_FIELDNAME:
+            case MetadataItemProps.USERDATA_FIELDNAME:
+               return false;
+            default:
+               return true;
+         }
+      }
    }
 }
 
