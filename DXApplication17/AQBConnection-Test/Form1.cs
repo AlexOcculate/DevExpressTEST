@@ -29,6 +29,14 @@ namespace AQBConnection_Test
       {
          this.InitializeComponent();
          {
+            this.aqbGridControl.UseEmbeddedNavigator = true;
+            this.aqbGridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            this.aqbGridView.OptionsView.ShowAutoFilterRow = true;
+            this.aqbGridView.OptionsFind.AlwaysVisible = true;
+            this.aqbGridView.OptionsView.ShowPreview = true;
+            this.aqbGridView.OptionsMenu.ShowConditionalFormattingItem = true;
+         }
+         {
             this.aqbGridControl.DataSource = this.dataTable;
             GridColumnCollection columns = this.aqbGridView.Columns;
             foreach(GridColumn gc in columns)
@@ -37,6 +45,7 @@ namespace AQBConnection_Test
                string name = gc.Name;
                gc.Visible = MetadataPullerXtraUserControl.IsFieldVisibleByDefault(fieldName);
             }
+
          }
       }
 
