@@ -101,6 +101,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z900", "Z900\Z900.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridCardAndLayoutView", "DXApplication18\GridCardAndLayoutView\GridCardAndLayoutView.csproj", "{EEC4838E-DFAC-49B1-B2B4-288290B60E24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chart-Test", "Chart-Test\Chart-Test.csproj", "{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridPlusChart", "GridPlusChart\GridPlusChart.csproj", "{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -501,6 +505,22 @@ Global
 		{EEC4838E-DFAC-49B1-B2B4-288290B60E24}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEC4838E-DFAC-49B1-B2B4-288290B60E24}.Release|x86.ActiveCfg = Release|Any CPU
 		{EEC4838E-DFAC-49B1-B2B4-288290B60E24}.Release|x86.Build.0 = Release|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Debug|x86.Build.0 = Debug|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Release|x86.ActiveCfg = Release|Any CPU
+		{B5D53FDE-9B8E-48DF-A7C7-C6F35E49BE43}.Release|x86.Build.0 = Release|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
