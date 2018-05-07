@@ -8,6 +8,23 @@ using System.Linq;
 
 namespace GridPlusChart
 {
+   /*
+   
+   - DataSource <-One---Many->> DataSourceDetails
+   
+   - DataSource
+   . - ID : String -- DataSource Unique ID.
+   . - Name : String -- DataSource Name.
+   . - Creation : DateTime -- Date and Time when it was created.
+   
+   - DataSource Details
+   . - ID : FK --> DataSource.ID
+   . - Argument : String -- Argument Name
+   . - Value : Integer -- Argument Value
+   
+   ID | Name | Creation | BAR CHART DIAGRAM 
+   
+   */
    public partial class Form1 : DevExpress.XtraEditors.XtraForm
    {
       private const string FOOBAR_DATASETNAME = "FooBar";
@@ -37,45 +54,51 @@ namespace GridPlusChart
       {
          this._ds = this.CreateDataSet();
          this.gridControl1.DataSource = this._ds;
-         this.gridControl1.DataMember = this._ds.Tables[MASTER_TABLENAME].TableName;
-         {
-            GridColumn gc = new GridColumn()
-            {
-               Caption = CU_GRID_COL_STRING_CAPTION,
-               FieldName = CU_GRID_COL_STRING_FIELDNAME,
-               UnboundType = DevExpress.Data.UnboundColumnType.String,
-               Visible = true
-            };
-            this.gridView1.Columns.Add(gc);
-         }
-         {
-            GridColumn gc = new GridColumn()
-            {
-               Caption = CU_GRID_COL_CHART_CAPTION,
-               FieldName = CU_GRID_COL_CHART_FIELDNAME,
-               UnboundType = DevExpress.Data.UnboundColumnType.Object,
-               Visible = true
-            };
-            this.gridView1.Columns.Add(gc);
-            {
-               Series serie = new Series("Objects", ViewType.Bar);
-               serie.ArgumentDataMember = ARG_COLUMNNAME;
-               serie.ValueDataMembers.AddRange(new string[ ] { VAL_COLUMNNAME });
-               ChartControl cc = new ChartControl();
-               cc.Series.Add(serie);
-               //
-               RepositoryItemAnyControl item = new RepositoryItemAnyControl() { Control = cc };
-               //column.View.GridControl.RepositoryItems.Add( item );
-               this.gridControl1.RepositoryItems.Add(item);
-               //((GridView) column.View).OptionsSelection.EnableAppearanceHideSelection = false;
-               gc.OptionsColumn.AllowEdit = false;
-               gc.OptionsFilter.AllowFilter = false;
-               gc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-               gc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-               gc.ColumnEdit = item;
-            }
-         }
+         this.gridControl1.DataMember = MASTER_TABLENAME;
+         this.CreateCUGridColString();
+         this.CreateCUGridColChart();
          this.gridView1.CustomUnboundColumnData += this.GridView1_CustomUnboundColumnData;
+      }
+
+      private void CreateCUGridColChart()
+      {
+         GridColumn gc = new GridColumn()
+         {
+            Caption = CU_GRID_COL_CHART_CAPTION,
+            FieldName = CU_GRID_COL_CHART_FIELDNAME,
+            UnboundType = DevExpress.Data.UnboundColumnType.Object,
+            Visible = true
+         };
+         this.gridView1.Columns.Add(gc);
+         {
+            Series serie = new Series("Objects", ViewType.Bar);
+            serie.ArgumentDataMember = ARG_COLUMNNAME;
+            serie.ValueDataMembers.AddRange(new string[ ] { VAL_COLUMNNAME });
+            ChartControl cc = new ChartControl();
+            cc.Series.Add(serie);
+            //
+            RepositoryItemAnyControl item = new RepositoryItemAnyControl() { Control = cc };
+            //column.View.GridControl.RepositoryItems.Add( item );
+            this.gridControl1.RepositoryItems.Add(item);
+            //((GridView) column.View).OptionsSelection.EnableAppearanceHideSelection = false;
+            gc.OptionsColumn.AllowEdit = false;
+            gc.OptionsFilter.AllowFilter = false;
+            gc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            gc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            gc.ColumnEdit = item;
+         }
+      }
+
+      private void CreateCUGridColString()
+      {
+         GridColumn gc = new GridColumn()
+         {
+            Caption = CU_GRID_COL_STRING_CAPTION,
+            FieldName = CU_GRID_COL_STRING_FIELDNAME,
+            UnboundType = DevExpress.Data.UnboundColumnType.String,
+            Visible = true
+         };
+         this.gridView1.Columns.Add(gc);
       }
 
       private void GridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
