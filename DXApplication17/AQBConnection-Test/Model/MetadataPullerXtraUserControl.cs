@@ -472,7 +472,7 @@ namespace DPControls.Controls.MetadataPuller
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "ID";
+            c.ColumnName = MetadataItemProps.ID_FIELDNAME;
             c.Caption = "Id";
             c.ReadOnly = true;
             c.Unique = false;
@@ -481,266 +481,266 @@ namespace DPControls.Controls.MetadataPuller
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "DataStoreName";
+            c.ColumnName = MetadataItemProps.DATASTORE_NAME_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string ); // typeof( System.IO.FileInfo );
-            c.ColumnName = "SnapshotFile";
+            c.ColumnName = MetadataItemProps.SNAPSHOT_FILE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( System.DateTime );
-            c.ColumnName = "LastWriteTimeUtc";
+            c.ColumnName = MetadataItemProps.LASTWRITETIMEUTC_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "MetadataProvider";
+            c.ColumnName = MetadataItemProps.METADATA_PROVIDER_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "SyntaxProvider";
+            c.ColumnName = MetadataItemProps.SYNTAX_PROVIDER_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "ParentID";
+            c.ColumnName = MetadataItemProps.PARENT_ID_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( bool );
-            c.ColumnName = "IsSystem";
+            c.ColumnName = MetadataItemProps.IS_SYSTEM_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = nameof( Type );
+            c.ColumnName = MetadataItemProps.TYPE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "ParentType";
+            c.ColumnName = MetadataItemProps.PARENT_TYPE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Cardinality";
+            c.ColumnName = MetadataItemProps.CARDINALYTY_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "FieldsCount";
+            c.ColumnName = MetadataItemProps.FIELDSCOUNT_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Fields";
+            c.ColumnName = MetadataItemProps.FIELDS_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "ReferencedCardinality";
+            c.ColumnName = MetadataItemProps.REFERENCED_CARDINALYTY_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "ReferencedObject";
+            c.ColumnName = MetadataItemProps.REFERENCED_OBJECT_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "ReferencedObjectName";
+            c.ColumnName = MetadataItemProps.REFERENCED_OBJECT_NAME_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "ReferencedFieldsCount";
+            c.ColumnName = MetadataItemProps.REFERENCED_FIELDS_COUNT_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "ReferencedFields";
+            c.ColumnName = MetadataItemProps.REFERENCED_FIELDS_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Server";
+            c.ColumnName = MetadataItemProps.SERVER_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Database";
+            c.ColumnName = MetadataItemProps.DATABASE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Schema";
+            c.ColumnName = MetadataItemProps.SCHEMA_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "ObjectName";
+            c.ColumnName = MetadataItemProps.OBJECT_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "NameFullQualified";
+            c.ColumnName = MetadataItemProps.NAMEFULLQUALIFIED_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "NameQuoted";
+            c.ColumnName = MetadataItemProps.NAMEQUOTED_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "AltName";
+            c.ColumnName = MetadataItemProps.ALTNAME_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Field";
+            c.ColumnName = MetadataItemProps.FIELD_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( bool );
-            c.ColumnName = "HasDefault";
+            c.ColumnName = MetadataItemProps.HAS_DEFAULT_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Expression";
+            c.ColumnName = MetadataItemProps.EXPRESSION_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "FieldType";
+            c.ColumnName = MetadataItemProps.FIELD_TYPE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "FieldTypeName";
+            c.ColumnName = MetadataItemProps.FIELD_TYPE_NAME_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( bool );
-            c.ColumnName = "IsNullable";
+            c.ColumnName = MetadataItemProps.IS_NULLABLE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "Precision";
+            c.ColumnName = MetadataItemProps.PRECISION_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "Scale";
+            c.ColumnName = MetadataItemProps.SCALE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( int );
-            c.ColumnName = "Size";
+            c.ColumnName = MetadataItemProps.SIZE_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( bool );
-            c.ColumnName = "IsPK";
+            c.ColumnName = MetadataItemProps.IS_PK_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( bool );
-            c.ColumnName = "IsRO";
+            c.ColumnName = MetadataItemProps.IS_READONLY_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "Description";
+            c.ColumnName = MetadataItemProps.DESCRIPTION_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( object );
-            c.ColumnName = "Tag";
+            c.ColumnName = MetadataItemProps.TAG_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }
          {
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
-            c.ColumnName = "UserData";
+            c.ColumnName = MetadataItemProps.USERDATA_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }

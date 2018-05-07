@@ -1,6 +1,6 @@
-﻿namespace GridCardAndLayoutView
+﻿namespace Chart_Test
 {
-   partial class Form1
+   partial class BindUsingTemplatesRuntime
    {
       /// <summary>
       /// Required designer variable.
@@ -28,8 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
-         this.components = new System.ComponentModel.Container();
-         this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+         this.barManager1 = new DevExpress.XtraBars.BarManager();
          this.bar1 = new DevExpress.XtraBars.Bar();
          this.bar2 = new DevExpress.XtraBars.Bar();
          this.bar3 = new DevExpress.XtraBars.Bar();
@@ -37,16 +36,7 @@
          this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-         this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-         this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
-         this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-         this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
-         this.gridSplitContainer1.SuspendLayout();
          this.SuspendLayout();
          // 
          // barManager1
@@ -100,15 +90,15 @@
          this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
          this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
          this.barDockControlTop.Manager = this.barManager1;
-         this.barDockControlTop.Size = new System.Drawing.Size(962, 46);
+         this.barDockControlTop.Size = new System.Drawing.Size(632, 46);
          // 
          // barDockControlBottom
          // 
          this.barDockControlBottom.CausesValidation = false;
          this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.barDockControlBottom.Location = new System.Drawing.Point(0, 518);
+         this.barDockControlBottom.Location = new System.Drawing.Point(0, 260);
          this.barDockControlBottom.Manager = this.barManager1;
-         this.barDockControlBottom.Size = new System.Drawing.Size(962, 18);
+         this.barDockControlBottom.Size = new System.Drawing.Size(632, 18);
          // 
          // barDockControlLeft
          // 
@@ -116,69 +106,29 @@
          this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
          this.barDockControlLeft.Location = new System.Drawing.Point(0, 46);
          this.barDockControlLeft.Manager = this.barManager1;
-         this.barDockControlLeft.Size = new System.Drawing.Size(0, 472);
+         this.barDockControlLeft.Size = new System.Drawing.Size(0, 214);
          // 
          // barDockControlRight
          // 
          this.barDockControlRight.CausesValidation = false;
          this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-         this.barDockControlRight.Location = new System.Drawing.Point(962, 46);
+         this.barDockControlRight.Location = new System.Drawing.Point(632, 46);
          this.barDockControlRight.Manager = this.barManager1;
-         this.barDockControlRight.Size = new System.Drawing.Size(0, 472);
+         this.barDockControlRight.Size = new System.Drawing.Size(0, 214);
          // 
-         // gridControl1
-         // 
-         this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.gridControl1.Location = new System.Drawing.Point(0, 0);
-         this.gridControl1.MainView = this.cardView1;
-         this.gridControl1.MenuManager = this.barManager1;
-         this.gridControl1.Name = "gridControl1";
-         this.gridControl1.Size = new System.Drawing.Size(962, 472);
-         this.gridControl1.TabIndex = 4;
-         this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cardView1,
-            this.gridView1});
-         // 
-         // cardView1
-         // 
-         this.cardView1.FocusedCardTopFieldIndex = 0;
-         this.cardView1.GridControl = this.gridControl1;
-         this.cardView1.Name = "cardView1";
-         // 
-         // gridView1
-         // 
-         this.gridView1.GridControl = this.gridControl1;
-         this.gridView1.Name = "gridView1";
-         // 
-         // gridSplitContainer1
-         // 
-         this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.gridSplitContainer1.Grid = this.gridControl1;
-         this.gridSplitContainer1.Location = new System.Drawing.Point(0, 46);
-         this.gridSplitContainer1.Name = "gridSplitContainer1";
-         this.gridSplitContainer1.Panel1.Controls.Add(this.gridControl1);
-         this.gridSplitContainer1.Size = new System.Drawing.Size(962, 472);
-         this.gridSplitContainer1.TabIndex = 4;
-         // 
-         // Form1
+         // BindUsingTemplatesRuntime
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(962, 536);
-         this.Controls.Add(this.gridSplitContainer1);
+         this.ClientSize = new System.Drawing.Size(632, 278);
          this.Controls.Add(this.barDockControlLeft);
          this.Controls.Add(this.barDockControlRight);
          this.Controls.Add(this.barDockControlBottom);
          this.Controls.Add(this.barDockControlTop);
-         this.Name = "Form1";
-         this.Text = "Form1";
-         this.Load += new System.EventHandler(this.Form1_Load);
+         this.Name = "BindUsingTemplatesRuntime";
+         this.Text = "BindUsingTemplatesRuntime";
+         this.Load += new System.EventHandler(this.BindUsingTemplatesRuntime_Load);
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
-         this.gridSplitContainer1.ResumeLayout(false);
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -194,10 +144,5 @@
       private DevExpress.XtraBars.BarDockControl barDockControlBottom;
       private DevExpress.XtraBars.BarDockControl barDockControlLeft;
       private DevExpress.XtraBars.BarDockControl barDockControlRight;
-      private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
-      private DevExpress.XtraGrid.GridControl gridControl1;
-      private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-      private DevExpress.XtraGrid.Views.Card.CardView cardView1;
    }
 }
-
